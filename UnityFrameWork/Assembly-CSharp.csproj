@@ -70,14 +70,18 @@
     <Compile Include="Assets\Script\Core\GameManager.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\AssetsBundleManager.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\PackageConfigManager.cs" />
-    <Compile Include="Assets\Script\Core\ResourceLoad\ResourceIOService.cs" />
+    <Compile Include="Assets\Script\Core\ResourceLoad\ResourceIOTool.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\ResourceManager.cs" />
+    <Compile Include="Assets\Script\Core\ResourceLoad\UpdateManager.cs" />
     <Compile Include="Assets\Script\Core\UIFrame\UIManager.cs" />
     <Compile Include="Assets\Script\Core\UIFrame\UIWindowBase.cs" />
+    <Compile Include="Assets\Script\Core\Utils\ByteTool.cs" />
     <Compile Include="Assets\Script\Core\Utils\FileTool.cs" />
-    <Compile Include="Assets\Script\Core\Utils\MDSTool.cs" />
+    <Compile Include="Assets\Script\Core\Utils\JsonTool.cs" />
+    <Compile Include="Assets\Script\Core\Utils\MD5Tool.cs" />
     <Compile Include="Assets\Script\Core\Utils\MiniJSON.cs" />
     <Compile Include="Assets\Script\UI\MianWindow.cs" />
+    <Compile Include="Assets\test.cs" />
     <Reference Include="UnityEngine">
       <HintPath>F:/Unity201949/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

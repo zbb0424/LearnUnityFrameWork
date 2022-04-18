@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Core\ResourceLoad\Editor\PackageConfigEditorWindow.cs" />
+    <Compile Include="Assets\Script\Editor\EditorCoroutineRunner.cs" />
     <Reference Include="UnityEngine">
       <HintPath>F:/Unity201949/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
