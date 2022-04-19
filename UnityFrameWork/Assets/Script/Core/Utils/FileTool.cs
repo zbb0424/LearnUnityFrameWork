@@ -15,4 +15,35 @@ public class FileTool
         if (!Directory.Exists(newPathDir))
             Directory.CreateDirectory(newPathDir);
     }
+
+    /// <summary>
+    /// 删除某个目录下的所有子目录和子文件，但是保留这个目录
+    /// </summary>
+    /// <param name="path"></param>
+    static void DeleteDirectory(string path)
+    {
+        string[] directorys = Directory.GetDirectories(path);
+
+        for (int i = 0; i < directorys.Length; i++)
+        {
+            string pathTmp = directorys[i];
+
+            if (Directory.Exists(pathTmp))
+            {
+                Directory.Delete(pathTmp, true);
+            }
+        }
+
+        string[] files = Directory.GetFiles(path);
+
+        for (int i = 0; i < files.Length; i++)
+        {
+            string pathTmp = files[i];
+
+            if (File.Exists(pathTmp))
+            {
+                File.Delete(pathTmp);
+            }
+        }
+    }
 }
