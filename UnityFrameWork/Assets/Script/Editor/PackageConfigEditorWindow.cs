@@ -1123,7 +1123,7 @@ public class PackageConfigEditorWindow : EditorWindow
         editorConfig.Add(key_bundles     , JsonTool.List2Json<EditPackageConfig>(bundles));    //Bundle包
 
         //保存编辑器配置文件
-        DataManager.SaveEditorData(configFileName, editorConfig);
+        DataManager.SaveEditorData(configFileName,editorConfig);
     }
 
     /// <summary>
@@ -1316,7 +1316,7 @@ public class PackageConfigEditorWindow : EditorWindow
         gameConfig.Add(PackageConfigManager.key_bundles     , JsonTool.Dictionary2Json<PackageConfig>(gameAssetsBundles));
 
         //保存游戏中读取的配置文件
-        DataManager.SaveEditorData(PackageConfigManager.configFileName, gameConfig);
+        DataManager.SaveData(PackageConfigManager.configFileName, gameConfig);
         AssetDatabase.Refresh();
     }
 

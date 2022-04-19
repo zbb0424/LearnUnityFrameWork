@@ -1,21 +1,25 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
-using System.Text;
 using MiniJSON;
+using System.Text;
 
-public class DataManager
+/*
+ * 数据管理器，只读，可热更新，可使用默认值
+ * 通过ResourceManager加载
+ * */
+public class DataManager 
 {
     public const string directoryName = "Data";
     public static Dictionary<string, object> GetData(string ConfigName)
     {
         string dataJson = "";
-#if UNITY_EDITOR
-        dataJson = ResourceIOTool.ReadStringByFile(GetEditorPath(ConfigName, false));
-#else   
-        dataJson = ResourceManager.ReadTextFile(GetDataPath(ConfigName));
-#endif
+
+        #if UNITY_EDITOR
+                dataJson = ResourceIOTool.ReadStringByFile(GetEditorPath(ConfigName,false));
+        #else
+                dataJson = ResourceManager.ReadTextFile(GetDataPath(ConfigName));
+        #endif
 
         if (dataJson == "")
         {
@@ -39,24 +43,23 @@ public class DataManager
         return builder.ToString();
     }
 
-    //只有在编辑器下能够使用
+    //只在编辑器下能够使用
 #if UNITY_EDITOR
 
-    /// <summary>
-    /// 读取编辑器数据
-    /// </summary>
-    /// <param name="ConfigName"></param>
-    /// <param name="data"></param>
-    public static void SaveData(string ConfigName,Dictionary<string,object> data)
+    public static void SaveData(string ConfigName, Dictionary<string, object> data)
     {
         ResourceIOTool.WriteStringByFile(GetEditorPath(ConfigName, false), Json.Serialize(data));
     }
 
-    public static Dictionary<string,object> GetEditorData(string ConfigName)
+    /// <summary>
+    /// 读取编辑器数据
+    /// </summary>
+    /// <param name="ConfigName">数据名称</param>
+    public static Dictionary<string, object> GetEditorData(string ConfigName)
     {
-        AssetDatabase.Refresh();
+        UnityEditor.AssetDatabase.Refresh();
 
-        string dataJson = ResourceIOTool.ReadStringByFile(GetEditorPath(ConfigName, true));
+        string dataJson = ResourceIOTool.ReadStringByFile(GetEditorPath(ConfigName,true));
 
         if (dataJson == "")
         {
@@ -71,15 +74,15 @@ public class DataManager
     /// <summary>
     /// 保存编辑器数据
     /// </summary>
-    /// <param name="ConfigName"></param>
-    /// <param name="data"></param>
-    public static void SaveEditorData(string ConfigName,Dictionary<string,object> data)
+    /// <param name="ConfigName">数据名称</param>
+    /// <param name="data">数据表</param>
+    public static void SaveEditorData(string ConfigName, Dictionary<string, object> data)
     {
         string configDataJson = Json.Serialize(data);
 
-        ResourceIOTool.WriteStringByFile(GetEditorPath(ConfigName, true), configDataJson);
+        ResourceIOTool.WriteStringByFile(GetEditorPath(ConfigName,true), configDataJson);
 
-        AssetDatabase.Refresh();
+        UnityEditor.AssetDatabase.Refresh();
     }
 
     public static string GetEditorPath(string ConfigName,bool isEditor)

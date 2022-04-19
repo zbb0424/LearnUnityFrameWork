@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using MiniJSON;
 using System.Text;
 
-public class MetaDataManager
+/*
+ * 元数据管理器
+ * 这里的数据决定热更新的内容
+ * */
+public class MetaDataManager 
 {
     public const string directoryName = "Meta";
-    public static Dictionary<string,object> GetData(string ConfigName)
+    public static Dictionary<string, object> GetData(string ConfigName)
     {
         string dataJson = "";
 
@@ -23,23 +27,25 @@ public class MetaDataManager
         }
     }
 
-    public static void SaveData(string ConfigName,Dictionary<string,object> data)
+    public static void SaveData(string ConfigName, Dictionary<string, object> data)
     {
         ResourceIOTool.WriteStringByFile(GetPath(ConfigName), Json.Serialize(data));
     }
 
+    //获取的是绝对路径
     static string GetPath(string ConfigName)
     {
         StringBuilder builder = new StringBuilder();
 
-#if UNITY_EDITOR
-        builder.Append(Application.dataPath);
-        builder.Append("/Resources/");
-#else
-        builder.Append(Application.persistentDataPath);
-#endif
+        #if UNITY_EDITOR
 
-        Application.temporaryCachePath;
+            builder.Append(Application.dataPath);
+            builder.Append("/Resources/");
+        #else
+            builder.Append(Application.persistentDataPath);
+        #endif
+
+            Application.temporaryCachePath;
 
         builder.Append(directoryName);
         builder.Append("/");

@@ -36,9 +36,8 @@ public static class AssetsBundleManager
         return null;
     }
 
-    public static void LoadAsync(string name,LoadCallBack callBack)
+    public static void LoadAsync(string name, LoadCallBack callBack)
     {
-
     }
 
     /// <summary>

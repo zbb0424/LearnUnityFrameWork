@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Text;
-
 /*
  * gameLoadType 为 Resource 时 ，所有资源从Resource读取
  * gameLoadType 不为 Resource时，资源读取方式从配置中读取
@@ -51,7 +50,6 @@ public static class ResourceManager
         }
 
         path.Append(localPath);
-
         return path.ToString();
     }
 
@@ -80,16 +78,17 @@ public static class ResourceManager
     //保存一个文本
     public static void WriteTextFile(string path,string content ,ResLoadType type = ResLoadType.Default)
     {
-#if UNITY_EDITOR
-        ResourceIOTool.WriteStringByFile(GetPath(path, ResLoadType.Resource), content);
-#else
+        #if UNITY_EDITOR
+            ResourceIOTool.WriteStringByFile(GetPath(path, ResLoadType.Resource), content);
+        #else
+            
+        #endif
 
-#endif
     }
 
     public static object Load(string name)
     {
-        PackageConfig packData = PackageConfigManager.GetPackageConfig(name);
+        PackageConfig packData  = PackageConfigManager.GetPackageConfig(name);
         ResLoadType loadTypeTmp = GetLoadType(packData.loadType);
 
         if (loadTypeTmp == ResLoadType.Resource)
@@ -101,10 +100,9 @@ public static class ResourceManager
             return AssetsBundleManager.Load(name);
         }
     }
-
     public static void LoadAsync(string name,LoadCallBack callBack)
     {
-        PackageConfig packData = PackageConfigManager.GetPackageConfig(name);
+        PackageConfig packData  = PackageConfigManager.GetPackageConfig(name);
         ResLoadType loadTypeTmp = GetLoadType(packData.loadType);
 
         if (loadTypeTmp == ResLoadType.Resource)
@@ -113,9 +111,16 @@ public static class ResourceManager
         }
         else
         {
-            AssetsBundleManager.LoadAsync(name, callBack);
+            AssetsBundleManager.LoadAsync(name,callBack);
         }
     }
+
+    //public static T GetResource<T>(string path)
+    //{
+    //    T resouce = new T();
+
+    //    return resouce;
+    //}
 }
 
 public enum ResLoadType

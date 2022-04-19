@@ -7,16 +7,15 @@ using System.Text;
 /// <summary>
 /// 资源读取器，负责从不同路径读取资源
 /// </summary>
-public class ResourceIOTool : MonoBehaviour
+public class ResourceIOTool :MonoBehaviour
 {
     static ResourceIOTool instance;
-
     public static ResourceIOTool GetInstance()
     {
         if (instance == null)
         {
             GameObject resourceIOTool = new GameObject();
-            resourceIOTool.name = "resourceIO";
+            resourceIOTool.name = "ResourceIO";
             DontDestroyOnLoad(resourceIOTool);
 
             instance = resourceIOTool.AddComponent<ResourceIOTool>();
@@ -70,17 +69,17 @@ public class ResourceIOTool : MonoBehaviour
         }
     }
 
-    public static void ResourceLoadAsync(string path,LoadCallBack callBack)
+    public static void ResourceLoadAsync(string path,LoadCallBack callback)
     {
-        GetInstance().MonoLoadMethod(path, callBack);
+        GetInstance().MonoLoadMethod(path, callback);
     }
 
-    public void MonoLoadMethod(string path,LoadCallBack callBack)
+    public void MonoLoadMethod(string path, LoadCallBack callback)
     {
-        StartCoroutine(MonoLoad(path, callBack));
+        StartCoroutine(MonoLoad(path, callback));
     }
 
-    public IEnumerator MonoLoad(string path,LoadCallBack callBack)
+    public IEnumerator MonoLoad(string path, LoadCallBack callback)
     {
         return null;
     }
@@ -111,6 +110,7 @@ public class ResourceIOTool : MonoBehaviour
             Debug.LogError("File Create Fail! \n" + e.Message);
         }
     }
+
 #endif
 
     #endregion

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using MiniJSON;
@@ -6,7 +7,7 @@ using System.Text;
 
 /// <summary>
 /// 配置管理器，可读可写，可同步，有默认值
-/// 不通过ResourceManager加载，也不受热更新影响
+/// 不通过ResourceManager加载,也不受热更新影响
 /// </summary>
 public static class ConfigManager 
 {
