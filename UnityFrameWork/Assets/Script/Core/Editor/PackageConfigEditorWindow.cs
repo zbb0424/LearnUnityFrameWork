@@ -491,13 +491,13 @@ public class PackageConfigEditorWindow : EditorWindow
             }
         }
 
-        for (int i = 0; i < relyPackages.Count; i++)
-        {
-            if (isExist_Bundle(obj, relyPackages[i]))
-            {
-                return true;
-            }
-        }
+        //for (int i = 0; i < relyPackages.Count; i++)
+        //{
+        //    if (isExist_Bundle(obj, relyPackages[i]))
+        //    {
+        //        return true;
+        //    }
+        //}
         return false;
     }
 
@@ -738,7 +738,7 @@ public class PackageConfigEditorWindow : EditorWindow
 
         if (isExist_AllBundle(objTmp))
         {
-            Debug.Log(obj.name + " 已经存在！");
+            //Debug.Log(obj.name + " 已经存在！");
         }
         else
         {
@@ -764,16 +764,16 @@ public class PackageConfigEditorWindow : EditorWindow
                 }
 
                 //过滤掉一些不必要加载进去的组件
-                if (ComponentFilter(res[j]))
-                {
-                    continue;
-                }
+                //if (ComponentFilter(res[j]))
+                //{
+                //    continue;
+                //}
 
                 EditorObject tmp = new EditorObject();
                 tmp.obj = res[j];
                 tmp.path = GetObjectPath(res[j]);
 
-                bool isExistRelyPackage = false;
+                //bool isExistRelyPackage = false;
 
                 for (int i = 0; i < relyPackages.Count; i++)
                 {
@@ -781,19 +781,19 @@ public class PackageConfigEditorWindow : EditorWindow
                     {
                         //在依赖包选项中添加此依赖包
                         EditPackageConfigTmp.relyPackagesMask = EditPackageConfigTmp.relyPackagesMask | 1 << i;
-                        isExistRelyPackage = true;
+                        //isExistRelyPackage = true;
                         break;
                     }
                 }
 
                 //该资源不在依赖包中，并且也与主资源不同时，放入包中
-                if (isExistRelyPackage == false
-                    && !EqualsEditorObject(EditPackageConfigTmp.mainObject, tmp)
-                    )
-                {
+                //if (isExistRelyPackage == false
+                //    && !EqualsEditorObject(EditPackageConfigTmp.mainObject, tmp)
+                //    )
+                //{
 
-                    EditPackageConfigTmp.objects.Add(tmp);
-                }
+                //    EditPackageConfigTmp.objects.Add(tmp);
+                //}
             }
 
             bundles.Add(EditPackageConfigTmp);
@@ -849,13 +849,13 @@ public class PackageConfigEditorWindow : EditorWindow
         //资源重复检查
         for (int i = 0; i < relyPackages.Count; i++)
         {
-            CheckPackage(relyPackages[i]);
+            CheckRelyRepeatRes(relyPackages[i]);
             CheckRelyPackagesEmptyRes(relyPackages[i]);
         }
 
         for (int i = 0; i < bundles.Count; i++)
         {
-            CheckPackage(bundles[i]);
+            CheckBundle(bundles[i]);
         }
 
         //资源丢失检查
@@ -868,11 +868,11 @@ public class PackageConfigEditorWindow : EditorWindow
     }
 
     /// <summary>
-    /// 检查某个包内有没有重复资源
+    /// 检查某个资源包内有没有重复资源
     /// </summary>
     /// <param name="pack"></param>
 
-    void CheckPackage(EditPackageConfig pack)
+    void CheckBundle(EditPackageConfig pack)
     {
         if (bundleName.ContainsKey(pack.name))
         {
@@ -890,14 +890,19 @@ public class PackageConfigEditorWindow : EditorWindow
 
             if (checkDict.ContainsKey(resNameTmp))
             {
-                if (isExist_EditorList(checkDict[resNameTmp], pack.mainObject))
+                //判断该资源是否在它的依赖包里，如果不在，加入判重
+                if (!GetResIsUseByRelyBundle(pack, pack.mainObject)
+                    && !ComponentFilter(pack.mainObject.obj))
                 {
-                    pack.warnMsg.Add("MainObject 重复! " + resNameTmp);
-                    warnCount++;
-                }
-                else
-                {
-                    checkDict[resNameTmp].Add(pack.mainObject);
+                    if (isExist_EditorList(checkDict[resNameTmp], pack.mainObject))
+                    {
+                        pack.warnMsg.Add("MainObject 重复! " + resNameTmp);
+                        warnCount++;
+                    }
+                    else
+                    {
+                        checkDict[resNameTmp].Add(pack.mainObject);
+                    }
                 }
             }
             else
@@ -907,26 +912,68 @@ public class PackageConfigEditorWindow : EditorWindow
             }
         }
 
-        for (int i = 0; i < pack.objects.Count; i++)
+        Object[] res = GetCorrelationResource(pack.mainObject.obj);
+
+        for (int i = 0; i < res.Length; i++)
         {
-            string resNameTmp = CustomToString(pack.objects[i].obj);
+            string resNameTmp = CustomToString(res[i]);
+            EditorObject tmp = new EditorObject();
+            tmp.obj = res[i];
+            tmp.path = GetObjectPath(res[i]);
 
             if (checkDict.ContainsKey(resNameTmp))
             {
-                if (isExist_EditorList(checkDict[resNameTmp], pack.objects[i]))
+                //判断该资源是否在它的依赖包里，如果不在，加入判重
+                if (!EqualsEditorObject(pack.mainObject, tmp)
+                    && !GetResIsUseByRelyBundle(pack, tmp)
+                    && !ComponentFilter(res[i]))
+                {
+                    if (isExist_EditorList(checkDict[resNameTmp], tmp))
+                    {
+                        pack.warnMsg.Add("Objects存在重复资源 ! " + resNameTmp);
+                        warnCount++;
+                    }
+                    else
+                    {
+                        checkDict[resNameTmp].Add(tmp);
+                    }
+                }
+            }
+            else
+            {
+                checkDict.Add(resNameTmp, new List<EditorObject>());
+                checkDict[resNameTmp].Add(tmp);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 检查依赖包中有没有重复资源
+    /// </summary>
+    /// <param name="pack"></param>
+    void CheckRelyRepeatRes(EditPackageConfig pack)
+    {
+        for (int i = 0; i < pack.objects.Count; i++)
+        {
+            string resNameTmp = CustomToString(pack.objects[i].obj);
+            EditorObject tmp = pack.objects[i];
+
+            if (checkDict.ContainsKey(resNameTmp))
+            {
+                if (isExist_EditorList(checkDict[resNameTmp], tmp))
                 {
                     pack.warnMsg.Add("Objects存在重复资源 ! " + resNameTmp);
                     warnCount++;
                 }
                 else
                 {
-                    checkDict[resNameTmp].Add(pack.objects[i]);
+                    checkDict[resNameTmp].Add(tmp);
                 }
             }
             else
             {
                 checkDict.Add(resNameTmp, new List<EditorObject>());
-                checkDict[resNameTmp].Add(pack.objects[i]);
+                checkDict[resNameTmp].Add(tmp);
             }
         }
     }
@@ -973,15 +1020,15 @@ public class PackageConfigEditorWindow : EditorWindow
                 warnCount++;
             }
 
-            EditorObject tmp = new EditorObject();
-            tmp.obj = res[i];
-            tmp.path = GetObjectPath(res[i]);
+            //EditorObject tmp = new EditorObject();
+            //tmp.obj = res[i];
+            //tmp.path = GetObjectPath(res[i]);
 
-            if (!GetResIsUse(pack, tmp) && !ComponentFilter(res[i]))
-            {
-                pack.errorMsg.Add(CustomToString(res[i]) + " 资源丢失依赖！");
-                errorCount++;
-            }
+            //if (!GetResIsUse(pack, tmp) && !ComponentFilter(res[i]))
+            //{
+            //    pack.errorMsg.Add(CustomToString(res[i]) + " 资源丢失依赖！");
+            //    errorCount++;
+            //}
         }
     }
 
@@ -1093,19 +1140,10 @@ public class PackageConfigEditorWindow : EditorWindow
     }
 
     /// <summary>
-    /// 检查单个资源是否全都被引用
+    /// 检查单个资源是否全都被其依赖包引用
     /// </summary>
-    bool GetResIsUse(EditPackageConfig pack, EditorObject res)
+    bool GetResIsUseByRelyBundle(EditPackageConfig pack, EditorObject res)
     {
-        if (EqualsEditorObject(pack.mainObject, res))
-        {
-            return true;
-        }
-
-        if (isExist_Bundle(res, pack))
-        {
-            return true;
-        }
 
         //根据mask获取所有依赖包
         List<EditPackageConfig> relysBundles = GetRelyPackListByMask(pack.relyPackagesMask);
@@ -1116,6 +1154,22 @@ public class PackageConfigEditorWindow : EditorWindow
             {
                 return true;
             }
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// 判断某个资源是否
+    /// </summary>
+    /// <param name="pack"></param>
+    /// <param name="res"></param>
+    /// <returns></returns>
+    bool GetResIsUseByMainObject(EditPackageConfig pack, EditorObject res)
+    {
+        if (EqualsEditorObject(pack.mainObject, res))
+        {
+            return true;
         }
 
         return false;
@@ -1194,6 +1248,9 @@ public class PackageConfigEditorWindow : EditorWindow
 
     IEnumerator Package()
     {
+        //自动保存设置文件
+        CreatPackageFile();
+
         relyBuildOption = BuildAssetBundleOptions.DeterministicAssetBundle
                | BuildAssetBundleOptions.CollectDependencies;//去重
 
