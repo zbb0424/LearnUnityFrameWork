@@ -17,6 +17,7 @@ public class MD5Tool
                 int len = (int)fs.Length;
                 byte[] data = new byte[len];
                 fs.Close();
+
                 return GetMD5(data);
             }
             return "";

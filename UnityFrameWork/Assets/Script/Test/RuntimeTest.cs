@@ -1,28 +1,51 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RuntimeTest : MonoBehaviour
+public class RuntimeTest : MonoBehaviour 
 {
-    void Start()
+	// Use this for initialization
+	void Start ()
     {
         BundleConfigManager.Initialize();
         ResourceManager.gameLoadType = ResLoadType.Streaming;
-    }
-
-    void Update()
+        UIManager.Init();
+	}
+	
+	// Update is called once per frame
+	void Update () 
     {
-        if (Input.GetKey(KeyCode.A))
+	    if(Input.GetKey(KeyCode.A))
         {
             GameObject testTmp = (GameObject)ResourceManager.Load("GameObject");
 
             Instantiate(testTmp);
         }
 
-        if (Input.GetKey(KeyCode.B))
+        if(Input.GetKey(KeyCode.B))
         {
             GameObject testTmp = (GameObject)ResourceManager.Load("UItest");
 
             Instantiate(testTmp);
+        }
+
+        if (Input.GetKey(KeyCode.U))
+        {
+            UIManager.OpenUIWindow("MianMenu");
+        }
+
+        if (Input.GetKey(KeyCode.I))
+        {
+            UIManager.DestroyUIWindow("MianMenu");
+        }
+
+        if (Input.GetKey(KeyCode.O))
+        {
+            UIManager.ShowUIWindow("MianMenu");
+        }
+
+        if (Input.GetKey(KeyCode.P))
+        {
+            UIManager.HideUIWindow("MianMenu");
         }
 
         if (Input.GetKey(KeyCode.C))
@@ -30,12 +53,12 @@ public class RuntimeTest : MonoBehaviour
             AssetsBundleManager.UnLoadBundle("UItest");
         }
 
-
+        
 
         if (Input.GetKey(KeyCode.D))
         {
             loadCount++;
-            ResourceManager.LoadAsync("UItest", (LoadState state, object obj) =>
+            ResourceManager.LoadAsync("UItest", (LoadState state, object obj) => 
             {
                 if (state.isDone)
                 {
@@ -45,7 +68,7 @@ public class RuntimeTest : MonoBehaviour
 
                     Instantiate(go);
 
-                    Debug.Log(loadCount + "  " + callbackCount);
+                    Debug.Log(loadCount+"  " + callbackCount);
                 }
                 else
                 {
@@ -53,7 +76,7 @@ public class RuntimeTest : MonoBehaviour
                 }
             });
         }
-    }
+	}
 
     int loadCount = 0;
     int callbackCount = 0;

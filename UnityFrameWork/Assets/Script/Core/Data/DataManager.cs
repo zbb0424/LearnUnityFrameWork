@@ -11,15 +11,11 @@ using System.Text;
 public class DataManager 
 {
     public const string directoryName = "Data";
-    public static Dictionary<string, object> GetData(string ConfigName)
+    public static DataTable GetData(string ConfigName)
     {
         string dataJson = "";
 
-        #if UNITY_EDITOR
-                dataJson = ResourceIOTool.ReadStringByFile(GetEditorPath(ConfigName,false));
-        #else
-                dataJson = ResourceManager.ReadTextFile(GetDataPath(ConfigName));
-        #endif
+        dataJson = ResourceManager.ReadTextFile(ConfigName);
 
         if (dataJson == "")
         {
@@ -27,44 +23,32 @@ public class DataManager
         }
         else
         {
-            return Json.Deserialize(dataJson) as Dictionary<string, object>;
+            return DataTable.Analysis(dataJson);
         }
-    }
-
-    //获取的是相对路径
-    static string GetDataPath(string ConfigName)
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.Append(directoryName);
-        builder.Append("/");
-        builder.Append(ConfigName);
-        builder.Append(".json");
-
-        return builder.ToString();
     }
 
     //只在编辑器下能够使用
 #if UNITY_EDITOR
 
-    public static void SaveData(string ConfigName, Dictionary<string, object> data)
+    public static void SaveData(string ConfigName, DataTable data)
     {
-        ResourceIOTool.WriteStringByFile(GetEditorPath(ConfigName, false), Json.Serialize(data));
+        ResourceIOTool.WriteStringByFile(GetEditorPath(ConfigName, false), DataTable.Serialize(data));
     }
 
     /// <summary>
     /// 读取编辑器数据
     /// </summary>
-    /// <param name="dataName">数据名称</param>
+    /// <param name="ConfigName">数据名称</param>
     public static Dictionary<string, object> GetEditorData(string dataName)
     {
         UnityEditor.AssetDatabase.Refresh();
 
-        string dataJson = ResourceIOTool.ReadStringByFile(GetEditorPath(dataName,true));
+        string dataJson = ResourceIOTool.ReadStringByFile(GetEditorPath(dataName, true));
 
         if (dataJson == "")
         {
-            Debug.Log(dataName + "dont find!");
-            return new Dictionary<string, object>();
+            Debug.Log(dataName + " dont find!");
+            return new Dictionary<string,object>();
         }
         else
         {
@@ -105,9 +89,11 @@ public class DataManager
             builder.Append("/");
         }
         builder.Append(ConfigName);
-        builder.Append(".json");
+        builder.Append(".csv");
 
         return builder.ToString();
     }
 #endif
+
+
 }

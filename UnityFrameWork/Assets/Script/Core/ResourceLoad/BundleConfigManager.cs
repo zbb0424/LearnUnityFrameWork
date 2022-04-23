@@ -13,12 +13,13 @@ public static class BundleConfigManager
     static Dictionary<string, BundleConfig> relyBundleConfigs = new Dictionary<string, BundleConfig>();
     static Dictionary<string, BundleConfig> bundleConfigs = new Dictionary<string, BundleConfig>();
 
+
     public static void Initialize()
     {
         Dictionary<string, object> data = ConfigManager.GetData(configFileName);
 
         relyBundleConfigs = JsonTool.Json2Dictionary<BundleConfig>(data[key_relyBundle].ToString());
-        bundleConfigs = JsonTool.Json2Dictionary<BundleConfig>(data[key_bundles].ToString());
+        bundleConfigs     = JsonTool.Json2Dictionary<BundleConfig>(data[key_bundles   ].ToString());
     }
 
     public static BundleConfig GetBundleConfig(string bundleName)
@@ -52,6 +53,7 @@ public class BundleConfig
     public string path;               //加载相对路径
     public string[] relyPackages;     //依赖包
     public string md5;                //md5
+    //[System.NonSerialized]
     public ResLoadType loadType;      //加载绝对路径
 }
 

@@ -7,8 +7,9 @@ using System.Text;
 /// <summary>
 /// 资源读取器，负责从不同路径读取资源
 /// </summary>
-public class ResourceIOTool : MonoBehaviour
+public class ResourceIOTool :MonoBehaviour
 {
+
     static ResourceIOTool instance;
     public static ResourceIOTool GetInstance()
     {
@@ -17,7 +18,7 @@ public class ResourceIOTool : MonoBehaviour
             GameObject resourceIOTool = new GameObject();
             resourceIOTool.name = "ResourceIO";
 
-            if (Application.isPlaying)
+            if(Application.isPlaying)
                 DontDestroyOnLoad(resourceIOTool);
 
             instance = resourceIOTool.AddComponent<ResourceIOTool>();
@@ -29,32 +30,28 @@ public class ResourceIOTool : MonoBehaviour
     #region 读操作
     public static string ReadStringByFile(string path)
     {
-        string content = "";
-
+        StringBuilder line = new StringBuilder();
         try
         {
-            FileInfo t = new FileInfo(path);
-            if (!t.Exists)
+            if (!File.Exists(path))
             {
+                Debug.Log("path dont exists ! : " + path);
                 return "";
             }
 
-            StreamReader sr = null;
-            sr = File.OpenText(path);
-            while ((content += sr.ReadLine()) != null)
-            {
-                break;
-            }
+            StreamReader sr = File.OpenText(path);
+
+            line.Append(sr.ReadToEnd());
 
             sr.Close();
             sr.Dispose();
-
         }
         catch (Exception e)
         {
             Debug.Log("Load text fail ! message:" + e.Message);
         }
-        return content;
+
+        return line.ToString();
     }
 
     public static string ReadStringByResource(string path)
@@ -85,6 +82,38 @@ public class ResourceIOTool : MonoBehaviour
     public IEnumerator MonoLoadByResourcesAsync(string path, LoadCallBack callback)
     {
         ResourceRequest status = Resources.LoadAsync(path);
+        LoadState loadState = new LoadState(); 
+
+        while (!status.isDone)
+        {
+            loadState.UpdateProgress(status);
+            callback(loadState,null);
+
+            yield return 0;
+        }
+
+        loadState.UpdateProgress(status);
+        callback(loadState, status.asset);
+    }
+
+    /// <summary>
+    /// 异步加载单个assetsbundle
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="callback"></param>
+    public static void AssetsBundleLoadAsync(string path, AssetBundleLoadCallBack callback)
+    {
+        GetInstance().MonoLoadAssetsBundleMethod(path, callback);
+    }
+
+    public void MonoLoadAssetsBundleMethod(string path, AssetBundleLoadCallBack callback)
+    {
+        StartCoroutine(MonoLoadByAssetsBundleAsync(path, callback));
+    }
+
+    public IEnumerator MonoLoadByAssetsBundleAsync(string path, AssetBundleLoadCallBack callback)
+    {
+        AssetBundleCreateRequest status = AssetBundle.LoadFromFileAsync(path);
         LoadState loadState = new LoadState();
 
         while (!status.isDone)
@@ -95,37 +124,11 @@ public class ResourceIOTool : MonoBehaviour
             yield return 0;
         }
 
-        loadState.UpdateProgress(status);
-        callback(loadState, status.asset);
-    }
-
-    public static void AssetsBundleLoadAsync(string path,AssetBundleLoadCallBack callBack)
-    {
-        GetInstance().MonoLoadAssetsBundleMethod(path, callBack);
-    }
-
-    public void MonoLoadAssetsBundleMethod(string path,AssetBundleLoadCallBack callBack)
-    {
-        StartCoroutine(MonoLoadByAssetsBundleAsync(path, callBack));
-    }
-
-    public IEnumerator MonoLoadByAssetsBundleAsync(string path,AssetBundleLoadCallBack callBack)
-    {
-        AssetBundleCreateRequest status = AssetBundle.LoadFromFileAsync(path);
-        LoadState loadState = new LoadState();
-
-        while (!status.isDone)
-        {
-            loadState.UpdateProgress(status);
-            callBack(loadState, null);
-
-            yield return 0;
-        }
-
         status.assetBundle.name = path;
         loadState.UpdateProgress(status);
-        callBack(loadState,status.assetBundle);
+        callback(loadState, status.assetBundle);
     }
+
     #endregion
 
     #region 写操作
@@ -156,29 +159,29 @@ public class ResourceIOTool : MonoBehaviour
 #endif
 
     #endregion
+
 }
 
-public delegate void AssetBundleLoadCallBack(LoadState state,AssetBundle bundle);
+public delegate void AssetBundleLoadCallBack(LoadState state, AssetBundle bundlle);
 public delegate void LoadCallBack(LoadState loadState, object resObject);
-
 public class LoadState
 {
     private static LoadState completeState;
 
     public static LoadState CompleteState
     {
-        get
-        {
+        get {
             if (completeState == null)
             {
                 completeState = new LoadState();
                 completeState.isDone = true;
                 completeState.progress = 1;
             }
-            return completeState;
+            return completeState; 
         }
     }
 
+    //public object asset;
     public bool isDone;
     public float progress;
 
@@ -193,4 +196,5 @@ public class LoadState
         isDone = assetBundleCreateRequest.isDone;
         progress = assetBundleCreateRequest.progress;
     }
+
 }

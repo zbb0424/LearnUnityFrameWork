@@ -7,9 +7,9 @@ using System;
 /// <summary>
 /// bundle管理器，用来管理所有的bundle
 /// </summary>
-public static class AssetsBundleManager
+public static class AssetsBundleManager 
 {
-    static Dictionary<string, Bundle> bundles = new Dictionary<string, Bundle>();
+    static Dictionary<string, Bundle> bundles        = new Dictionary<string, Bundle>();
     static Dictionary<string, RelyBundle> relyBundle = new Dictionary<string, RelyBundle>(); //所有依赖包
 
 
@@ -24,12 +24,12 @@ public static class AssetsBundleManager
         string path = GetBundlePath(configTmp);
 
         //加载依赖包
-        for (int i = 0; i < configTmp.relyPackages.Length; i++)
+        for(int i = 0;i<configTmp.relyPackages.Length;i++ )
         {
             LoadRelyBundle(configTmp.relyPackages[i]);
         }
 
-        return AddBundle(bundleName, AssetBundle.LoadFromFile(path));
+        return AddBundle(bundleName,AssetBundle.LoadFromFile(path));
     }
 
     //加载一个依赖包
@@ -75,7 +75,7 @@ public static class AssetsBundleManager
         //先加载依赖包
         for (int i = 0; i < configTmp.relyPackages.Length; i++)
         {
-            LoadRelyBundleAsync(configTmp.relyPackages[i], (LoadState relyLoadState, RelyBundle RelyBundle) =>
+            LoadRelyBundleAsync(configTmp.relyPackages[i], (LoadState relyLoadState, RelyBundle RelyBundle) => 
             {
                 if (RelyBundle != null && relyLoadState.isDone)
                 {
@@ -88,13 +88,13 @@ public static class AssetsBundleManager
                 //所有依赖包加载完毕加载资源包
                 if (loadStateDict.Keys.Count == configTmp.relyPackages.Length)
                 {
-                    ResourceIOTool.AssetsBundleLoadAsync(path, (LoadState bundleLoadState, AssetBundle bundle) =>
+                    ResourceIOTool.AssetsBundleLoadAsync(path, (LoadState bundleLoadState, AssetBundle bundle) => 
                     {
                         if (bundleLoadState.isDone)
                         {
                             callBack(LoadState.CompleteState, AddBundle(bundleName, bundle));
                         }
-                        else
+                        else 
                         {
                             state.progress += bundleLoadState.progress / ((float)configTmp.relyPackages.Length + 1);
                             callBack(state, null);
@@ -103,7 +103,7 @@ public static class AssetsBundleManager
                 }
                 else
                 {
-                    callBack(state, null);
+                    callBack(state,null);
                 }
             });
         }
@@ -131,11 +131,11 @@ public static class AssetsBundleManager
             BundleConfig configTmp = BundleConfigManager.GetRelyBundleConfig(relyBundleName);
             string path = GetBundlePath(configTmp);
 
-            ResourceIOTool.AssetsBundleLoadAsync(path, (LoadState state, AssetBundle bundle) =>
+            ResourceIOTool.AssetsBundleLoadAsync(path, (LoadState state,AssetBundle bundle)=>
             {
                 if (!state.isDone)
                 {
-                    callBack(state, null);
+                    callBack(state,null);
                 }
                 else
                 {
@@ -152,7 +152,7 @@ public static class AssetsBundleManager
     /// <returns>目标资源</returns>
     public static object Load(string name)
     {
-        if (bundles.ContainsKey(name))
+        if(bundles.ContainsKey(name))
         {
             return bundles[name].mainAsset;
         }
@@ -184,13 +184,13 @@ public static class AssetsBundleManager
                 else
                 {
                     //等待加载完毕再一起回调,这里先缓存起来
-                    if (LoadAsyncDict.ContainsKey(name))
+                    if(LoadAsyncDict.ContainsKey(name))
                     {
                         LoadAsyncDict[name] += callBack;
                     }
                     else
                     {
-                        LoadAsyncDict.Add(name, callBack);
+                        LoadAsyncDict.Add(name,callBack);
                     }
                 }
             }
@@ -212,7 +212,7 @@ public static class AssetsBundleManager
                 });
             }
         }
-        catch (Exception e)
+        catch(Exception e)
         {
             Debug.LogError("LoadAsync: " + e.ToString());
         }
@@ -251,9 +251,9 @@ public static class AssetsBundleManager
     {
         if (relyBundle.ContainsKey(relyBundleName))
         {
-            relyBundle[relyBundleName].relyCount--;
+            relyBundle[relyBundleName].relyCount --;
 
-            if (relyBundle[relyBundleName].relyCount <= 0)
+            if (relyBundle[relyBundleName].relyCount <=0)
             {
                 relyBundle[relyBundleName].bundle.Unload(true);
                 relyBundle.Remove(relyBundleName);
@@ -289,13 +289,13 @@ public static class AssetsBundleManager
             bundleTmp.bundle.Unload(false);
 
             //如果有缓存起来的回调这里一起回调
-            if (LoadAsyncDict.ContainsKey(bundleName))
+            if( LoadAsyncDict.ContainsKey(bundleName))
             {
                 try
                 {
-                    LoadAsyncDict[bundleName](LoadState.CompleteState, bundleTmp.mainAsset);
+                    LoadAsyncDict[bundleName](LoadState.CompleteState,bundleTmp.mainAsset);
                 }
-                catch (Exception e)
+                catch(Exception e)
                 {
                     Debug.Log("LoadAsync AddBundle " + e.ToString());
                 }
@@ -329,7 +329,7 @@ public static class AssetsBundleManager
         {
             Debug.LogError("AddRelyBundle: " + relyBundleName + " dont exist!");
         }
-
+        
 
         return tmp;
     }

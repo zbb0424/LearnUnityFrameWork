@@ -20,7 +20,7 @@ public class FileTool
     /// 删掉某个目录下的所有子目录和子文件，但是保留这个目录
     /// </summary>
     /// <param name="path"></param>
-    public static void DeleteDirectory(string path)
+     public static void DeleteDirectory(string path)
     {
         string[] directorys = Directory.GetDirectories(path);
 
@@ -48,11 +48,7 @@ public class FileTool
         }
     }
 
-    /// <summary>
-    /// 移除拓展名
-    /// </summary>
-    /// <param name="name"></param>
-    /// <returns></returns>
+    //移除拓展名
     public static string RemoveExpandName(string name)
     {
         int dirIndex = name.LastIndexOf(".");

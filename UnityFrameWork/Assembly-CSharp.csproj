@@ -68,13 +68,19 @@
     <Compile Include="Assets\Script\Core\AnimSystem\AnimSystem.cs" />
     <Compile Include="Assets\Script\Core\Config\ConfigManager.cs" />
     <Compile Include="Assets\Script\Core\Data\DataManager.cs" />
+    <Compile Include="Assets\Script\Core\Data\DataTable.cs" />
     <Compile Include="Assets\Script\Core\GameManager.cs" />
+    <Compile Include="Assets\Script\Core\GameObject\GameObjectManager.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\AssetsBundleManager.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\BundleConfigManager.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\ResourceManager.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\UpdateManager.cs" />
-    <Compile Include="Assets\Script\Core\UI\UIManager.cs" />
-    <Compile Include="Assets\Script\Core\UI\UIWindowBase.cs" />
+    <Compile Include="Assets\Script\Core\UI\Control\UIAnimManager.cs" />
+    <Compile Include="Assets\Script\Core\UI\Control\UILayerManager.cs" />
+    <Compile Include="Assets\Script\Core\UI\Control\UIManager.cs" />
+    <Compile Include="Assets\Script\Core\UI\Control\UISystemEvent.cs" />
+    <Compile Include="Assets\Script\Core\UI\Model\UIWindowBase.cs" />
+    <Compile Include="Assets\Script\Core\UI\Style\LanguageManager.cs" />
     <Compile Include="Assets\Script\Core\Utils\ByteTool.cs" />
     <Compile Include="Assets\Script\Core\Utils\FileTool.cs" />
     <Compile Include="Assets\Script\Core\Utils\JsonTool.cs" />
@@ -84,6 +90,8 @@
     <Compile Include="Assets\Script\Test\RuntimeTest.cs" />
     <Compile Include="Assets\Script\UI\MianWindow.cs" />
     <Compile Include="Assets\test.cs" />
+    <None Include="Assets\Resources\Data\testData.txt" />
+    <None Include="Assets\Resources\Data\bugs.txt" />
     <Reference Include="UnityEngine">
       <HintPath>F:/Unity201949/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

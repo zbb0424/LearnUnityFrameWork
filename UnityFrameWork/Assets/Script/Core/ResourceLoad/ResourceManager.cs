@@ -90,7 +90,7 @@ public static class ResourceManager
     {
         BundleConfig packData  = BundleConfigManager.GetBundleConfig(name);
 
-        if (packData == null)
+        if(packData == null)
         {
             return null;
         }
@@ -112,7 +112,7 @@ public static class ResourceManager
 
         if (packData == null)
         {
-            return;
+            return ;
         }
 
         ResLoadType loadTypeTmp = GetLoadType(packData.loadType);
@@ -146,3 +146,6 @@ public enum ResLoadType
 
     HotUpdate
 }
+
+
+

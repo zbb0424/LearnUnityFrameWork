@@ -28,8 +28,8 @@ public static class ConfigManager
 
         if (dataJson == "")
         {
-            Debug.Log(ConfigName + "dont find!");
-            return new Dictionary<string, object>();
+            Debug.Log(ConfigName + " dont find!");
+            return new Dictionary<string,object>();
         }
         else
         {
@@ -48,9 +48,10 @@ public static class ConfigManager
         StringBuilder builder = new StringBuilder();
 
 #if UNITY_EDITOR
+
         builder.Append(Application.dataPath);
         builder.Append("/Resources");
-#else   
+#else
         builder.Append(Application.persistentDataPath);
 #endif
         builder.Append("/");
@@ -59,6 +60,7 @@ public static class ConfigManager
         return builder.ToString();
     }
 
+    //获取相对路径
     static string GetRelativelyPath(string ConfigName)
     {
         StringBuilder builder = new StringBuilder();
@@ -69,6 +71,7 @@ public static class ConfigManager
 
         return builder.ToString();
     }
+
 
 //只在编辑器下能够使用
 #if UNITY_EDITOR
