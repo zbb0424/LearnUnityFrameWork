@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Core\AnimSystem\AnimData.cs" />
     <Compile Include="Assets\Script\Core\AnimSystem\AnimSystem.cs" />
+    <Compile Include="Assets\Script\Core\Application\ApplicationManager.cs" />
     <Compile Include="Assets\Script\Core\Config\ConfigManager.cs" />
     <Compile Include="Assets\Script\Core\Data\DataManager.cs" />
     <Compile Include="Assets\Script\Core\Data\DataTable.cs" />

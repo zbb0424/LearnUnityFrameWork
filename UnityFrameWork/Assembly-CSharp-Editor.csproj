@@ -67,6 +67,7 @@
     <Compile Include="Assets\Editor\DataManagerTest.cs" />
     <Compile Include="Assets\Editor\ResourceLoadTest.cs" />
     <Compile Include="Assets\Script\Core\Editor\PackageConfigEditorWindow.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UIEditorWindow.cs" />
     <Compile Include="Assets\Script\Core\Editor\Utils\EditorCoroutineRunner.cs" />
     <Reference Include="UnityEngine">
       <HintPath>F:/Unity201949/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

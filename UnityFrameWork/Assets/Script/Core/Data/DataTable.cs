@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Text;
 
-public class DataTable :Dictionary<string ,SingleData>
+public class DataTable : Dictionary<string, SingleData>
 {
     //默认值
     public Dictionary<string, string> defaultValue;
@@ -13,6 +13,9 @@ public class DataTable :Dictionary<string ,SingleData>
     /// 单条记录所拥有的字段名
     /// </summary>
     public List<string> TableKeys;
+
+    public List<string> TableIDs;
+
     /// <summary>
     /// 将文本解析为表单数据
     /// </summary>
@@ -32,7 +35,7 @@ public class DataTable :Dictionary<string ,SingleData>
             {
                 if (!rowKeys[i].Equals(""))
                 {
-                     data.TableKeys.Add(rowKeys[i]);
+                    data.TableKeys.Add(rowKeys[i]);
                 }
             }
 
@@ -46,6 +49,8 @@ public class DataTable :Dictionary<string ,SingleData>
                     data.defaultValue.Add(data.TableKeys[i], rowDefaultValue[i]);
                 }
             }
+
+            data.TableIDs = new List<string>();
 
             //从第三行开始，解析数据
             for (int i = 2; i < line.Length; i++)
@@ -64,6 +69,8 @@ public class DataTable :Dictionary<string ,SingleData>
 
                 //第一个数据作为这一个记录的Key
                 data.Add(row[0], dataTmp);
+
+                data.TableIDs.Add(row[0]);
             }
 
             return data;
@@ -145,11 +152,11 @@ public class DataTable :Dictionary<string ,SingleData>
         int startIndex = 0;
         bool state = true; //逗号状态和引号状态
 
-        for (int i = 0; i < lineContent.Length;i++)
+        for (int i = 0; i < lineContent.Length; i++)
         {
-            if(state)
+            if (state)
             {
-                if(lineContent[i] == '\t')
+                if (lineContent[i] == '\t')
                 {
                     result.Add(lineContent.Substring(startIndex, i - startIndex));
                     startIndex = i + 1;
@@ -268,7 +275,7 @@ public class SingleData : Dictionary<string, string>
 
         throw new Exception("Don't Exist Value or DefaultValue by " + key); // throw  
     }
-    
+
     public Vector2 ParseVector2(string value)
     {
         try
@@ -279,7 +286,7 @@ public class SingleData : Dictionary<string, string>
 
             return new Vector2(x, y);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             throw new Exception("ParseVector2: Don't convert value to Vector2 value:" + value + "\n" + e.ToString()); // throw  
         }
@@ -317,7 +324,7 @@ public class SingleData : Dictionary<string, string>
                 a = float.Parse(values[3]);
             }
 
-            return new Color(r, g, b,a);
+            return new Color(r, g, b, a);
         }
         catch (Exception e)
         {
