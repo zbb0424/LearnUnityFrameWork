@@ -3,6 +3,7 @@ using System.Collections;
 
 public class UILayerManager : MonoBehaviour 
 {
+    public Transform m_GameUILayerParent;
     public Transform m_FixedLayerParent;
     public Transform m_NormalLayerParent;
     public Transform m_TopbarLayerParent;
@@ -10,6 +11,11 @@ public class UILayerManager : MonoBehaviour
 
     public void Awake()
     {
+        if (m_GameUILayerParent == null)
+        {
+            Debug.LogError("UILayerManager :GameUILayerParent is null!");
+        }
+
         if (m_FixedLayerParent == null)
         {
             Debug.LogError("UILayerManager :FixedLayerParent is null!");

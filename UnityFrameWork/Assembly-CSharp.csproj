@@ -67,27 +67,36 @@
     <Compile Include="Assets\Script\Core\AnimSystem\AnimData.cs" />
     <Compile Include="Assets\Script\Core\AnimSystem\AnimSystem.cs" />
     <Compile Include="Assets\Script\Core\Application\ApplicationManager.cs" />
+    <Compile Include="Assets\Script\Core\Audio\AudioManager.cs" />
     <Compile Include="Assets\Script\Core\Config\ConfigManager.cs" />
     <Compile Include="Assets\Script\Core\Data\DataManager.cs" />
     <Compile Include="Assets\Script\Core\Data\DataTable.cs" />
-    <Compile Include="Assets\Script\Core\GameManager.cs" />
+    <Compile Include="Assets\Script\Core\Develop\FPSCounter.cs" />
+    <Compile Include="Assets\Script\Core\Develop\GUIConsole.cs" />
+    <Compile Include="Assets\Script\Core\Develop\Log.cs" />
+    <Compile Include="Assets\Script\Core\Develop\LogOutPutThread.cs" />
+    <Compile Include="Assets\Script\Core\Develop\MemoryDetector.cs" />
+    <Compile Include="Assets\Script\Core\Effect\CameraFade.cs" />
     <Compile Include="Assets\Script\Core\GameObject\GameObjectManager.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\AssetsBundleManager.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\BundleConfigManager.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\ResourceManager.cs" />
     <Compile Include="Assets\Script\Core\ResourceLoad\UpdateManager.cs" />
+    <Compile Include="Assets\Script\Core\Timer\Timer.cs" />
+    <Compile Include="Assets\Script\Core\Timer\TimerEvent.cs" />
     <Compile Include="Assets\Script\Core\UI\Control\UIAnimManager.cs" />
     <Compile Include="Assets\Script\Core\UI\Control\UILayerManager.cs" />
     <Compile Include="Assets\Script\Core\UI\Control\UIManager.cs" />
     <Compile Include="Assets\Script\Core\UI\Control\UISystemEvent.cs" />
     <Compile Include="Assets\Script\Core\UI\Model\UIWindowBase.cs" />
     <Compile Include="Assets\Script\Core\UI\Style\LanguageManager.cs" />
-    <Compile Include="Assets\Script\Core\Utils\ByteTool.cs" />
-    <Compile Include="Assets\Script\Core\Utils\FileTool.cs" />
-    <Compile Include="Assets\Script\Core\Utils\JsonTool.cs" />
-    <Compile Include="Assets\Script\Core\Utils\MD5Tool.cs" />
-    <Compile Include="Assets\Script\Core\Utils\MiniJSON.cs" />
-    <Compile Include="Assets\Script\Core\Utils\ResourceIOTool.cs" />
+    <Compile Include="Assets\Script\Core\UI\Utils\ByteTool.cs" />
+    <Compile Include="Assets\Script\Core\UI\Utils\FileTool.cs" />
+    <Compile Include="Assets\Script\Core\UI\Utils\JsonTool.cs" />
+    <Compile Include="Assets\Script\Core\UI\Utils\MD5Tool.cs" />
+    <Compile Include="Assets\Script\Core\UI\Utils\MiniJSON.cs" />
+    <Compile Include="Assets\Script\Core\UI\Utils\ResourceIOTool.cs" />
+    <Compile Include="Assets\Script\Core\UI\Utils\UITools.cs" />
     <Compile Include="Assets\Script\Test\RuntimeTest.cs" />
     <Compile Include="Assets\Script\UI\MianWindow.cs" />
     <Compile Include="Assets\test.cs" />
@@ -275,6 +284,15 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>F:/Unity201949/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>F:/Unity201949/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -633,8 +651,17 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Monetization">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Editor">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -648,14 +675,41 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.multiplayer-weaver.Editor">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
+      <HintPath>F:/project/LearnUnityFrameWork/UnityFrameWork/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
