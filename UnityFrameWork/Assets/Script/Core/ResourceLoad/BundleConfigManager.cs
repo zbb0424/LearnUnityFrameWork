@@ -15,22 +15,22 @@ public static class BundleConfigManager
 
     public static void Initialize()
     {
-        Dictionary<string, object> data = ConfigManager.GetData(configFileName);
+        Dictionary<string, SingleField> data = ConfigManager.GetData(configFileName);
 
         if (data == null)
         {
             throw new Exception("BundleConfigManager Initialize Exception: " + configFileName + "file is not exits");
         }
 
-        relyBundleConfigs = JsonTool.Json2Dictionary<BundleConfig>(data[key_relyBundle].ToString());
-        bundleConfigs     = JsonTool.Json2Dictionary<BundleConfig>(data[key_bundles   ].ToString());
+        relyBundleConfigs = JsonTool.Json2Dictionary<BundleConfig>(data[key_relyBundle].GetString());
+        bundleConfigs     = JsonTool.Json2Dictionary<BundleConfig>(data[key_bundles].GetString());
     }
 
     public static BundleConfig GetBundleConfig(string bundleName)
     {
         if (bundleConfigs == null)
         {
-            throw new Exception("BundleConfigManager GetBundleConfig Exception: bundleConfigs is null  do you Initialize?");
+            throw new Exception("BundleConfigManager GetBundleConfig : bundleConfigs is null  do you Initialize?");
         }
 
         if (bundleConfigs.ContainsKey(bundleName))
@@ -39,7 +39,7 @@ public static class BundleConfigManager
         }
         else
         {
-            throw new Exception("BundleConfigManager GetBundleConfig Exception: Dont find " + bundleName + " please check BundleConfig!");
+            throw new Exception("BundleConfigManager GetBundleConfig : Dont find " + bundleName + " please check BundleConfig!");
         }
     }
 
@@ -68,6 +68,6 @@ public class BundleConfig
     public string[] relyPackages;     //依赖包
     public string md5;                //md5
     //[System.NonSerialized]
-    public ResLoadType loadType;      //加载绝对路径
+    public ResLoadType loadType;      //加载类型
 }
 

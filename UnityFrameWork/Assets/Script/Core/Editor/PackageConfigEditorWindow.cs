@@ -4,10 +4,9 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
-
-public class PackageConfigEditorWindow : EditorWindow
+public class BundleConfigEditorWindow : EditorWindow
 {
-    const string configFileName = "PackageConfigEditor";
+    const string configFileName = "BundleConfigEditor";
 
     const string relyAssetsBundlePath = "RelyBundle"; //所有依赖包放在此目录下
 
@@ -108,19 +107,24 @@ public class PackageConfigEditorWindow : EditorWindow
             CheckPackage();
         }
 
-        if (GUILayout.Button("保存设置文件"))
+        if (GUILayout.Button("保存编辑器设置文件"))
         {
             CreatPackageFile();
         }
 
-        if (GUILayout.Button("不打包只生成资源路径文件"))
+        if (GUILayout.Button("生成游戏资源路径文件"))
         {
-            CreatBundelPackageConfig();
+            CheckAndCreatBundelPackageConfig();
         }
 
         if (GUILayout.Button("打包 并生成MD5文件"))
         {
             CheckAndPackage();
+        }
+
+        if (GUILayout.Button("生成MD5"))
+        {
+            CheckAndCreatBundelPackageConfig();
         }
 
         GUILayout.BeginHorizontal();
@@ -374,7 +378,6 @@ public class PackageConfigEditorWindow : EditorWindow
         progressContent = "";
     }
 
-
     #region 显示Bundle包
 
     bool b_ok = true;
@@ -627,7 +630,6 @@ public class PackageConfigEditorWindow : EditorWindow
 
     }
     #endregion
-
 
     #endregion
 
@@ -896,7 +898,7 @@ public class PackageConfigEditorWindow : EditorWindow
 
     public static void ShowWindow()
     {
-        EditorWindow.GetWindow(typeof(PackageConfigEditorWindow));
+        EditorWindow.GetWindow(typeof(BundleConfigEditorWindow));
     }
     #endregion
 
@@ -925,11 +927,11 @@ public class PackageConfigEditorWindow : EditorWindow
 
         for (int i = 0; i < dires.Length;i++ )
         {
-            //配置不打包
-            if (!dires[i].Equals(resourcePath + ConfigManager.directoryName))
-            {
+            ////配置不打包
+            //if (!dires[i].Equals(resourcePath + ConfigManager.c_directoryName))
+            //{
                 RecursionDirectory(dires[i]);
-            }
+            //}
         }
 
         string[] files = Directory.GetFiles(path);
@@ -1060,9 +1062,10 @@ public class PackageConfigEditorWindow : EditorWindow
     Dictionary<string, List<EditorObject>> checkDict = new Dictionary<string, List<EditorObject>>();
     Dictionary<string, int> bundleName = new Dictionary<string, int>();
     int errorCount = 0;
-    int warnCount = 0;
+    int warnCount  = 0;
 
     bool checkMaterial = false;  //是否检查材质球
+
     /// <summary>
     /// 依赖包检查
     /// </summary>
@@ -1582,10 +1585,27 @@ public class PackageConfigEditorWindow : EditorWindow
 
     #region 生成游戏中使用的配置文件
 
+    void CheckAndCreatBundelPackageConfig()
+    {
+        CheckPackage();
+
+        if (errorCount == 0)
+        {
+            CreatBundelPackageConfig();
+        }
+        else
+        {
+            if (EditorUtility.DisplayDialog("失败", "打包设置有错误，请先修复错误！", "好的", "仍要继续") == false)
+            {
+                CreatBundelPackageConfig();
+            }
+        }
+    }
+
     //生成游戏中使用的配置文件
     public void CreatBundelPackageConfig()
     {
-        Dictionary<string, object> gameConfig = new Dictionary<string, object>();
+        Dictionary<string, SingleField> gameConfig = new Dictionary<string, SingleField>();
 
         Dictionary<string,BundleConfig> gameRelyBundles = new Dictionary<string,BundleConfig>();
         for (int i = 0; i < relyPackages.Count; i++)
@@ -1615,8 +1635,8 @@ public class PackageConfigEditorWindow : EditorWindow
             gameAssetsBundles.Add(pack.name,pack);
         }
 
-        gameConfig.Add(BundleConfigManager.key_relyBundle  , JsonTool.Dictionary2Json<BundleConfig>(gameRelyBundles));
-        gameConfig.Add(BundleConfigManager.key_bundles     , JsonTool.Dictionary2Json<BundleConfig>(gameAssetsBundles));
+        gameConfig.Add(BundleConfigManager.key_relyBundle  , new SingleField( JsonTool.Dictionary2Json<BundleConfig>(gameRelyBundles)));
+        gameConfig.Add(BundleConfigManager.key_bundles     , new SingleField( JsonTool.Dictionary2Json<BundleConfig>(gameAssetsBundles)));
 
         //保存游戏中读取的配置文件
         ConfigManager.SaveData(BundleConfigManager.configFileName, gameConfig);
@@ -1626,29 +1646,29 @@ public class PackageConfigEditorWindow : EditorWindow
     //生成版本文件
     public void CreatVersionFile()
     {
-        Dictionary<string, object> VersionData = ConfigManager.GetData(UpdateManager.versionFileName);
+        Dictionary<string, SingleField> VersionData = ConfigManager.GetData(UpdateManager.versionFileName);
 
         if (VersionData == null)
         {
-            VersionData = new Dictionary<string, object>();
+            VersionData = new Dictionary<string, SingleField>();
         }
 
         if (VersionData.ContainsKey(UpdateManager.key_largeVersion))
         {
-            VersionData[UpdateManager.key_largeVersion] = largeVersion.ToString();
+            VersionData[UpdateManager.key_largeVersion] = new SingleField(largeVersion);
         }
         else
         {
-            VersionData.Add(UpdateManager.key_largeVersion, largeVersion.ToString());
+            VersionData.Add(UpdateManager.key_largeVersion, new SingleField(largeVersion));
         }
 
         if (VersionData.ContainsKey(UpdateManager.key_smallVerson))
         {
-            VersionData[UpdateManager.key_smallVerson] = smallVersion.ToString();
+            VersionData[UpdateManager.key_smallVerson] = new SingleField(smallVersion);
         }
         else
         {
-            VersionData.Add(UpdateManager.key_smallVerson, smallVersion.ToString());
+            VersionData.Add(UpdateManager.key_smallVerson, new SingleField(smallVersion));
         }
 
         ConfigManager.SaveData(UpdateManager.versionFileName, VersionData);
@@ -1658,7 +1678,7 @@ public class PackageConfigEditorWindow : EditorWindow
     //解析版本号文件
     public void AnalysisVersionFile()
     {
-        Dictionary<string, object> VersionData = ConfigManager.GetData(UpdateManager.versionFileName);
+        Dictionary<string, SingleField> VersionData = ConfigManager.GetData(UpdateManager.versionFileName);
 
         if (VersionData == null)
         {
@@ -1670,7 +1690,7 @@ public class PackageConfigEditorWindow : EditorWindow
 
         if (VersionData.ContainsKey(UpdateManager.key_largeVersion))
         {
-            largeVersion = int.Parse( VersionData[UpdateManager.key_largeVersion].ToString());
+            largeVersion = VersionData[UpdateManager.key_largeVersion].GetInt();
         }
         else
         {
@@ -1679,7 +1699,7 @@ public class PackageConfigEditorWindow : EditorWindow
 
         if (VersionData.ContainsKey(UpdateManager.key_smallVerson))
         {
-            smallVersion = int.Parse(VersionData[UpdateManager.key_smallVerson].ToString());
+            smallVersion = VersionData[UpdateManager.key_smallVerson].GetInt();
         }
         else
         {

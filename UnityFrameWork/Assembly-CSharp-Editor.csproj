@@ -65,6 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Core\Editor\Application\ApplicationManagerComponentEditor.cs" />
+    <Compile Include="Assets\Script\Core\Editor\Config\ConfigEditorWindow.cs" />
+    <Compile Include="Assets\Script\Core\Editor\Data\DataEditorWindow.cs" />
     <Compile Include="Assets\Script\Core\Editor\PackageConfigEditorWindow.cs" />
     <Compile Include="Assets\Script\Core\Editor\UI\EditorGUIStyleData.cs" />
     <Compile Include="Assets\Script\Core\Editor\UI\UIBaseWindowEditor.cs" />
@@ -76,7 +78,10 @@
     <Compile Include="Assets\Script\Core\Editor\UI\UIStyleManager.cs" />
     <Compile Include="Assets\Script\Core\Editor\UI\UITemplate.cs" />
     <Compile Include="Assets\Script\Core\Editor\UI\UITemplateConfigManager.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\componment\ReusingScrollRectEditor.cs" />
     <Compile Include="Assets\Script\Core\Editor\Utils\EditorCoroutineRunner.cs" />
+    <Compile Include="Assets\Script\Core\Editor\Utils\EditorUtil.cs" />
+    <Compile Include="Assets\Script\Core\Editor\Utils\EditorUtilGUI.cs" />
     <Compile Include="Assets\Script\Test\Editor\NewEditorTest.cs" />
     <None Include="Assets\Script\Core\Editor\res\UIWindowClassTemplate.txt" />
     <Reference Include="UnityEngine">

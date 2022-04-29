@@ -10,11 +10,10 @@ public class UIManager : MonoBehaviour
     static UIManager s_instance;
     public static UILayerManager s_UILayerManager; //UI层级管理器
     public static UIAnimManager s_UIAnimManager;   //UI动画管理器
+    public static Camera s_UIcamera;               //UICamera
 
     static public Dictionary<string, List<UIWindowBase>> s_UIs     = new Dictionary<string, List<UIWindowBase>>(); //打开的UI
     static public Dictionary<string, List<UIWindowBase>> s_hideUIs = new Dictionary<string, List<UIWindowBase>>(); //隐藏的UI
-
-    public static Camera s_UIcamera;
 
     #region 初始化
 
@@ -51,16 +50,19 @@ public class UIManager : MonoBehaviour
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
-    public static UIWindowBase CreateUIWindow<T>() where T : UIWindowBase
+    public static T CreateUIWindow<T>() where T : UIWindowBase
     {
-        return CreateUIWindow(typeof(T).Name);
+        return (T)CreateUIWindow(typeof(T).Name);
     }
     public static UIWindowBase CreateUIWindow(string l_UIname)
     {
         GameObject l_UItmp = GameObjectManager.CreatGameObject(l_UIname, s_Instance.gameObject);
         UIWindowBase l_UIbase = l_UItmp.GetComponent<UIWindowBase>();
         UISystemEvent.Dispatch(l_UIbase, UIEvent.OnInit);  //派发OnInit事件
-        l_UIbase.Init();
+        try{
+            l_UIbase.Init();}
+        catch(Exception e){
+            Debug.LogError("OnInit Exception: " + e.ToString());}
 
         AddHideUI(l_UIbase);
 
@@ -76,7 +78,6 @@ public class UIManager : MonoBehaviour
     /// <returns>返回打开的UI</returns>
     public static UIWindowBase OpenUIWindow(string l_UIname, UICallBack l_callback = null, params object[] l_objs)
     {
-        GameObject l_UItmp = GameObjectManager.CreatGameObject(l_UIname, s_Instance.gameObject);
         UIWindowBase l_UIbase = GetHideUI(l_UIname);
 
         if (l_UIbase == null)
@@ -88,15 +89,20 @@ public class UIManager : MonoBehaviour
         AddUI(l_UIbase);
 
         UISystemEvent.Dispatch(l_UIbase, UIEvent.OnOpen);  //派发OnOpen事件
-        l_UIbase.OnOpen();
+        try{
+            l_UIbase.OnOpen();}
+        catch (Exception e)
+        {
+            Debug.LogError("OnOpen Exception: " + e.ToString());
+        }
 
         s_UILayerManager.SetLayer(l_UIbase);      //设置层级
         s_UIAnimManager.StartEnterAnim(l_UIbase, l_callback, l_objs); //播放动画
         return l_UIbase;
     }
-    public static void OpenUIWindow<T>() where T : UIWindowBase
+    public static T OpenUIWindow<T>() where T : UIWindowBase
     {
-        OpenUIWindow(typeof(T).Name);
+        return (T)OpenUIWindow(typeof(T).Name);
     }
 
     /// <summary>
@@ -132,7 +138,15 @@ public class UIManager : MonoBehaviour
     public static void CloseUIWindowCallBack(UIWindowBase l_UI, params object[] l_objs)
     {
         UISystemEvent.Dispatch(l_UI, UIEvent.OnDestroy);  //派发OnDestroy事件
-        l_UI.OnClose();
+        try
+        {
+            l_UI.OnClose();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("OnClose Exception: " + e.ToString());
+        }
+
         l_UI.RemoveAllEvent();
         AddHideUI(l_UI);
     }
@@ -175,8 +189,14 @@ public class UIManager : MonoBehaviour
         {
             RemoveUI(l_UI);   
         }
-
-        l_UI.OnDestroy();
+        try
+        {
+            l_UI.OnDestroy();
+        }
+        catch(Exception e)
+        {
+            Debug.LogError("OnDestroy :" + e.ToString());
+        }
         Destroy(l_UI.gameObject);
     }
 
@@ -237,8 +257,6 @@ public class UIManager : MonoBehaviour
             s_UIs.Add(l_UI.name, new List<UIWindowBase>());
         }
 
-        Debug.Log("AddUI: " + l_UI.name);
-
         s_UIs[l_UI.name].Add(l_UI);
     }
 
@@ -291,14 +309,12 @@ public class UIManager : MonoBehaviour
     {
         if (!s_hideUIs.ContainsKey(l_UIname))
         {
-            Debug.Log("!ContainsKey " + l_UIname);
             return null;
         }
         else
         {
             if (s_hideUIs[l_UIname].Count == 0)
             {
-                Debug.Log("s_UIs[UIname].Count == 0");
                 return null;
             }
             else

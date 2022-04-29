@@ -160,12 +160,16 @@ public class UITemplate
         go_UITemplate = new GameObject(s_TemplateName + "_" + s_newTemplateName);
         pre_UITemplate          = null;
 
-        if (go_SelectedNode != null)
+        go_UITemplate.layer = LayerMask.NameToLayer("UI");
+
+        RectTransform rt =  go_UITemplate.AddComponent<RectTransform>();
+
+        if(go_SelectedNode != null)
         {
             go_UITemplate.transform.SetParent(go_SelectedNode.transform);
         }
 
-        RectTransform rt =  go_UITemplate.AddComponent<RectTransform>();
+        go_UITemplate.transform.localScale = Vector3.one;
 
         rt.anchorMin = Vector2.zero;
         rt.anchorMax = Vector2.one;

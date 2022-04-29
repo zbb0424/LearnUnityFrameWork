@@ -9,6 +9,8 @@ public class ApplicationStatusManager
     /// 当前程序在哪个状态
     /// </summary>
     public static IApplicationStatus s_currentAppStatus;
+
+    //可切换状态
     static Dictionary<string,IApplicationStatus> s_status = new Dictionary<string,IApplicationStatus>();
 
     public static void Init()
