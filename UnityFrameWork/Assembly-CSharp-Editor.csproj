@@ -64,11 +64,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Editor\DataManagerTest.cs" />
-    <Compile Include="Assets\Editor\ResourceLoadTest.cs" />
+    <Compile Include="Assets\Script\Core\Editor\Application\ApplicationManagerComponentEditor.cs" />
     <Compile Include="Assets\Script\Core\Editor\PackageConfigEditorWindow.cs" />
-    <Compile Include="Assets\Script\Core\Editor\UIEditorWindow.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\EditorGUIStyleData.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\UIBaseWindowEditor.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\UICreateService.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\UIEditorWindow.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\UIStyleComponentEditor.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\UIStyleConfigManager.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\UIStyleInfo.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\UIStyleManager.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\UITemplate.cs" />
+    <Compile Include="Assets\Script\Core\Editor\UI\UITemplateConfigManager.cs" />
     <Compile Include="Assets\Script\Core\Editor\Utils\EditorCoroutineRunner.cs" />
+    <Compile Include="Assets\Script\Test\Editor\NewEditorTest.cs" />
+    <None Include="Assets\Script\Core\Editor\res\UIWindowClassTemplate.txt" />
     <Reference Include="UnityEngine">
       <HintPath>F:/Unity201949/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

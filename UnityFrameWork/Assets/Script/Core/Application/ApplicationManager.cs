@@ -6,24 +6,45 @@ public class ApplicationManager : MonoBehaviour
 {
     public AppMode m_AppMode = AppMode.Developing;
 
+    [HideInInspector]
+    public string m_Status;
+
     public void Awake()
     {
         AppLaunch();
     }
 
     /// <summary>
-    /// 请把游戏初始化逻辑放在此处
+    /// 程序启动
     /// </summary>
-    void GameStart()
+    public void AppLaunch()
     {
+        SetResourceLoadType();            //设置资源加载类型
+        Log.Init();                       //日志系统启动
+        ApplicationStatusManager.Init();  //游戏流程状态机初始化
 
+        //全局状态初始化放在此处
+
+        if (m_AppMode != AppMode.Release)
+        {
+            GUIConsole.Init();                                    //运行时Debug
+            ApplicationStatusManager.EnterTestModel(m_Status);    //可以从此处进入测试流程
+        }
+        else
+        {
+            //游戏流程状态机，开始第一个状态
+            ApplicationStatusManager.EnterStatus(m_Status);
+        }
     }
 
     #region 程序生命周期事件派发
 
-    public static ApplicationCallback s_OnApplicationQuit = null;
-    public static ApplicationCallback s_OnApplicationUpdate = null;
-    public static ApplicationCallback s_OnApplicationOnGUI = null;
+        
+    public static ApplicationVoidCallback s_OnApplicationQuit = null;
+    public static ApplicationBoolCallback s_OnApplicationPause = null;
+    public static ApplicationBoolCallback s_OnApplicationFocus = null;
+    public static ApplicationVoidCallback s_OnApplicationUpdate = null;
+    public static ApplicationVoidCallback s_OnApplicationOnGUI = null;
 
     void OnApplicationQuit()
     {
@@ -32,6 +53,40 @@ public class ApplicationManager : MonoBehaviour
             try
             {
                 s_OnApplicationQuit();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e.ToString());
+            }
+        }
+    }
+
+    /*
+     * 强制暂停时，先 OnApplicationPause，后 OnApplicationFocus
+     * 重新“启动”游戏时，先OnApplicationFocus，后 OnApplicationPause
+     */
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (s_OnApplicationPause != null)
+        {
+            try
+            {
+                s_OnApplicationPause(pauseStatus);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e.ToString());
+            }
+        }
+    }
+
+    void OnApplicationFocus(bool focusStatus)
+    {
+        if (s_OnApplicationFocus != null)
+        {
+            try
+            {
+                s_OnApplicationFocus(focusStatus);
             }
             catch (Exception e)
             {
@@ -69,44 +124,6 @@ public class ApplicationManager : MonoBehaviour
             ResourceManager.gameLoadType = ResLoadType.HotUpdate;
         }
     }
-
-    /// <summary>
-    /// 程序启动
-    /// </summary>
-    public void AppLaunch()
-    {
-        SetResourceLoadType();
-        Log.Init(); //日志系统启动
-
-        if(m_AppMode != AppMode.Release)
-        {
-            GUIConsole.Init();
-        }
-
-        //等待热更新
-        HotUpdate();
-    }
-
-    /// <summary>
-    /// 资源热更新
-    /// </summary>
-    public void HotUpdate()
-    {
-        CompleteHotUpdate();
-    }
-
-    /// <summary>
-    /// 热更新完毕再调用这个方法
-    /// </summary>
-    public void CompleteHotUpdate()
-    {
-        BundleConfigManager.Initialize();
-        UIManager.Init();
-
-        //游戏开始逻辑放在此处
-        GameStart();
-    }
-
     #endregion
 }
 
@@ -117,4 +134,5 @@ public enum AppMode
     Release
 }
 
-public delegate void ApplicationCallback();
+public delegate void ApplicationBoolCallback(bool status);
+public delegate void ApplicationVoidCallback();

@@ -1,0 +1,658 @@
+2022/4/27 17:48:53	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:48:54	AddUI: MianMenu
+2022/4/27 17:49:16	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:16	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:17	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:23	AddUI: MianMenu
+2022/4/27 17:49:28	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:28	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	s_UIs[UIname].Count == 0
+---------------------------------------------------------------------------------------------------------------------
+2022/4/27 17:49:29	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:201)
+UIManager.DestroyUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:67)
+UIManager.DestroyUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:98)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:36)
+
+---------------------------------------------------------------------------------------------------------------------

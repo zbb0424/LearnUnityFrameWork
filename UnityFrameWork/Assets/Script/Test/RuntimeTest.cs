@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class RuntimeTest : MonoBehaviour 
 {
 	// Use this for initialization
 	void Start ()
     {
-
+        Type tmp = Type.GetType("UIManager");
+        
+        Debug.Log("Type:" + tmp);
 	}
 	
 	// Update is called once per frame
@@ -33,17 +36,7 @@ public class RuntimeTest : MonoBehaviour
 
         if (Input.GetKey(KeyCode.I))
         {
-            UIManager.DestroyUIWindow("MianMenu");
-        }
-
-        if (Input.GetKey(KeyCode.O))
-        {
-            UIManager.ShowUIWindow("MianMenu");
-        }
-
-        if (Input.GetKey(KeyCode.P))
-        {
-            UIManager.HideUIWindow("MianMenu");
+            UIManager.CloseUIWindow("MianMenu");
         }
 
         if (Input.GetKey(KeyCode.C))

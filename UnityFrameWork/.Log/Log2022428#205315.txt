@@ -1,0 +1,28 @@
+2022/4/28 20:53:15	safdasfasfd
+---------------------------------------------------------------------------------------------------------------------
+2022/4/28 20:53:15	UILayerManager :popUpLayerParent is null!
+
+UnityEngine.Debug:LogError(Object)
+UILayerManager:Awake() (at Assets/Script/Core/UI/Control/UILayerManager.cs:36)
+UnityEngine.Object:Instantiate(GameObject)
+GameObjectManager:CreatGameObject(String, GameObject) (at Assets/Script/Core/GameObject/GameObjectManager.cs:41)
+UIManager:Init() (at Assets/Script/Core/UI/Control/UIManager.cs:35)
+GameStatus:OnEnterStatus() (at Assets/Script/Test/GameStatus/GameStatus.cs:9)
+ApplicationStatusManager:EnterTestModel(String) (at Assets/Script/Core/Application/ApplicationStatusManager.cs:89)
+ApplicationManager:AppLaunch() (at Assets/Script/Core/Application/ApplicationManager.cs:31)
+ApplicationManager:Awake() (at Assets/Script/Core/Application/ApplicationManager.cs:14)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/28 20:53:15	Type:UIManager
+2022/4/28 20:53:43	Assets\Script\Core\Develop\MemoryDetector.cs(50,46): warning CS0618: 'Profiler.GetTotalAllocatedMemory()' is obsolete: 'GetTotalAllocatedMemory has been deprecated since it is limited to 4GB. Please use GetTotalAllocatedMemoryLong() instead.'
+2022/4/28 20:53:43	Assets\Script\Core\Develop\MemoryDetector.cs(52,49): warning CS0618: 'Profiler.GetTotalReservedMemory()' is obsolete: 'GetTotalReservedMemory has been deprecated since it is limited to 4GB. Please use GetTotalReservedMemoryLong() instead.'
+2022/4/28 20:53:43	Assets\Script\Core\Develop\MemoryDetector.cs(54,55): warning CS0618: 'Profiler.GetTotalUnusedReservedMemory()' is obsolete: 'GetTotalUnusedReservedMemory has been deprecated since it is limited to 4GB. Please use GetTotalUnusedReservedMemoryLong() instead.'
+2022/4/28 20:53:43	Assets\Script\Core\Develop\MemoryDetector.cs(58,38): warning CS0618: 'Profiler.GetMonoHeapSize()' is obsolete: 'GetMonoHeapSize has been deprecated since it is limited to 4GB. Please use GetMonoHeapSizeLong() instead.'
+2022/4/28 20:53:43	Assets\Script\Core\Develop\MemoryDetector.cs(60,38): warning CS0618: 'Profiler.GetMonoUsedSize()' is obsolete: 'GetMonoUsedSize has been deprecated since it is limited to 4GB. Please use GetMonoUsedSizeLong() instead.'
+2022/4/28 20:53:43	Assets\Script\Core\ResourceLoad\AssetsBundleManager.cs(287,35): warning CS0618: 'AssetBundle.mainAsset' is obsolete: 'mainAsset has been made obsolete. Please use the new AssetBundle build system introduced in 5.0 and check BuildAssetBundles documentation for details.'
+2022/4/28 20:53:43	Assets\Script\Core\Editor\UI\UICreateService.cs(120,69): warning CS0618: 'ReplacePrefabOptions' is obsolete: 'This has turned into the more explicit APIs, SavePrefabAsset, SaveAsPrefabAsset, SaveAsPrefabAssetAndConnect'
+2022/4/28 20:53:43	Assets\Script\Core\Editor\UI\UICreateService.cs(120,9): warning CS0618: 'PrefabUtility.CreatePrefab(string, GameObject, ReplacePrefabOptions)' is obsolete: 'Use SaveAsPrefabAsset or SaveAsPrefabAssetAndConnect instead.'
+2022/4/28 20:53:43	Assets\Script\Core\Editor\UI\UICreateService.cs(167,66): warning CS0618: 'ReplacePrefabOptions' is obsolete: 'This has turned into the more explicit APIs, SavePrefabAsset, SaveAsPrefabAsset, SaveAsPrefabAssetAndConnect'
+2022/4/28 20:53:43	Assets\Script\Core\Editor\UI\UICreateService.cs(167,13): warning CS0618: 'PrefabUtility.CreatePrefab(string, GameObject, ReplacePrefabOptions)' is obsolete: 'Use SaveAsPrefabAsset or SaveAsPrefabAssetAndConnect instead.'
+2022/4/28 20:53:43	Assets\Script\Core\Editor\UI\UIStyleManager.cs(198,40): warning CS0618: 'EditorGUILayout.ObjectField(string, Object, Type, params GUILayoutOption[])' is obsolete: 'Check the docs for the usage of the new parameter 'allowSceneObjects'.'
+2022/4/28 20:53:43	Assets\Script\Core\Editor\UI\UIStyleManager.cs(223,39): warning CS0618: 'EditorGUILayout.ObjectField(string, Object, Type, params GUILayoutOption[])' is obsolete: 'Check the docs for the usage of the new parameter 'allowSceneObjects'.'

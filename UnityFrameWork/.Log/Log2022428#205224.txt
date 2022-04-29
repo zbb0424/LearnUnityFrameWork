@@ -1,0 +1,17 @@
+2022/4/28 20:52:24	5555 GameStatus
+2022/4/28 20:52:24	safdasfasfd
+---------------------------------------------------------------------------------------------------------------------
+2022/4/28 20:52:24	UILayerManager :popUpLayerParent is null!
+
+UnityEngine.Debug:LogError(Object)
+UILayerManager:Awake() (at Assets/Script/Core/UI/Control/UILayerManager.cs:36)
+UnityEngine.Object:Instantiate(GameObject)
+GameObjectManager:CreatGameObject(String, GameObject) (at Assets/Script/Core/GameObject/GameObjectManager.cs:41)
+UIManager:Init() (at Assets/Script/Core/UI/Control/UIManager.cs:35)
+GameStatus:OnEnterStatus() (at Assets/Script/Test/GameStatus/GameStatus.cs:9)
+ApplicationStatusManager:EnterTestModel(String) (at Assets/Script/Core/Application/ApplicationStatusManager.cs:89)
+ApplicationManager:AppLaunch() (at Assets/Script/Core/Application/ApplicationManager.cs:32)
+ApplicationManager:Awake() (at Assets/Script/Core/Application/ApplicationManager.cs:14)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/4/28 20:52:24	Type:UIManager

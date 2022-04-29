@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UITools : MonoBehaviour
+public class UITools : MonoBehaviour 
 {
+
     /// <summary>
     /// 加载一个对象并把它实例化
     /// </summary>

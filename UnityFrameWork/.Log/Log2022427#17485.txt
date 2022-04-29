@@ -1,0 +1,5 @@
+2022/4/27 17:48:24	The referenced script (Unknown) on this Behaviour is missing!
+2022/4/27 17:48:24	The referenced script on this Behaviour (Game Object 'GameObject') is missing!
+2022/4/27 17:48:24	The referenced script (Unknown) on this Behaviour is missing!
+2022/4/27 17:48:24	The referenced script on this Behaviour (Game Object 'GameObject') is missing!
+2022/4/27 17:48:24	The referenced script on this Behaviour (Game Object 'GameObject') is missing!

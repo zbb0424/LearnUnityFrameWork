@@ -10,7 +10,7 @@ public class TimerEvent
     /// <summary>
     /// 重复调用次数,-1代表一直调用
     /// </summary>
-    public int m_repeatCount = 0;
+    public int m_repeatCount   = 0;
     public int m_currentRepeat = 0;
 
     /// <summary>
@@ -50,13 +50,13 @@ public class TimerEvent
             {
                 m_callBack(m_objs);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 Debug.LogError(e.ToString());
             }
         }
-
-        if (m_repeatCount > 0)
+        
+        if(m_repeatCount>0)
         {
             m_currentRepeat++;
         }

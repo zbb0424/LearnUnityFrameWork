@@ -2,31 +2,28 @@
 using System.Collections;
 using System;
 
-public class CameraFade : MonoBehaviour
-{
+public class CameraFade : MonoBehaviour {
     private static CameraFade instance = null;
-    public delegate void CallBack();
+    public  delegate void CallBack();
     public static CameraFade Instance
     {
-        get
-        {
+        get {
             if (instance == null)
             {
                 GameObject obj = new GameObject("[CameraFade]");
                 instance = obj.AddComponent<CameraFade>();
             }
-            return CameraFade.instance;
-        }
-
+            return CameraFade.instance; }
+        
     }
-    //  AfterFadeFunction fun;
+  //  AfterFadeFunction fun;
     public void KillAll()
     {
         instance = null;
         Destroy(gameObject);
     }
 
-    float alpha = 0;
+    float alpha = 0; 
     private float fadeTime = 0.5f;
     private Texture2D crossfadeTexture;
 
@@ -35,20 +32,20 @@ public class CameraFade : MonoBehaviour
     {
         if (!isFading)
         {
-            StartCoroutine(FadeAction(true, _fadeInTime, _fun));
+            StartCoroutine(FadeAction(true,_fadeInTime, _fun));
         }
     }
-    //淡出
+  //淡出
     public void FadeOut(float _fadeOutTime, CallBack _fun = null)
     {
         if (!isFading)
         {
-            StartCoroutine(FadeAction(false, _fadeOutTime, _fun));
+            StartCoroutine(FadeAction(false,_fadeOutTime, _fun));
         }
 
     }
     //从淡入到淡出
-    public void FadeInToOut(float _fadeInTime, float afterInDelayTime, float _fadeOutTime, CallBack afterFadeInCallback = null, CallBack afterFadeOutCallback = null)
+    public void FadeInToOut(float _fadeInTime, float afterInDelayTime, float _fadeOutTime, CallBack afterFadeInCallback=null, CallBack afterFadeOutCallback = null)
     {
         if (!isFading)
         {
@@ -57,7 +54,7 @@ public class CameraFade : MonoBehaviour
     }
     IEnumerator FadeInToOutAction(float _fadeInTime, float afterInDelayTime, float _fadeOutTime, CallBack afterFadeInCallback = null, CallBack afterFadeOutCallback = null)
     {
-        yield return StartCoroutine(FadeAction(true, _fadeInTime, afterFadeInCallback));
+        yield return StartCoroutine(FadeAction(true,_fadeInTime, afterFadeInCallback));
         isFading = true;
         yield return new WaitForSeconds(afterInDelayTime);
         isFading = false;
@@ -65,7 +62,7 @@ public class CameraFade : MonoBehaviour
     }
     public bool isFading = false;
 
-    IEnumerator FadeAction(bool isFadeIn, float tempFadeTime, CallBack _fun)
+    IEnumerator FadeAction(bool isFadeIn,float tempFadeTime,  CallBack _fun)
     {
         tempColor = GUI.color;
         GUI.depth = 100;
@@ -86,26 +83,26 @@ public class CameraFade : MonoBehaviour
 
         while (true)
         {
-            if (!isFadeIn)
-            {
-                alpha = (tempTime - Time.unscaledTime) / fadeTime;
-
-                if (alpha < 0.05f)
+                if (!isFadeIn)
                 {
-                    alpha = 0;
-                    break;
-                }
-            }
-            else
-            {
-                alpha = Mathf.Clamp(1 - ((tempTime - Time.unscaledTime) / fadeTime), 0f, 1f);
+                    alpha = (tempTime - Time.unscaledTime) / fadeTime;
 
-                if (alpha >= 0.98f)
-                {
-                    alpha = 1;
-                    break;
+                    if (alpha < 0.05f)
+                    {
+                        alpha = 0;
+                        break;
+                    }
                 }
-            }
+                else
+                {
+                    alpha = Mathf.Clamp(1 - ((tempTime - Time.unscaledTime) / fadeTime), 0f, 1f);
+
+                    if (alpha >= 0.98f)
+                    {
+                        alpha = 1;
+                        break;
+                    }
+                }
             yield return new WaitForEndOfFrame();
         }
         yield return new WaitForEndOfFrame();
@@ -122,13 +119,13 @@ public class CameraFade : MonoBehaviour
         {
             Debug.LogError("Camera Fade Call back Exception :" + e);
         }
-        //  yield return new WaitForEndOfFrame();
+      //  yield return new WaitForEndOfFrame();
     }
 
     // Update is called once per frame
-    Color tempColor;
+    Color tempColor ;
     void OnGUI()
-    {
+    {           
         tempColor.a = alpha;
         GUI.color = tempColor;
         if (crossfadeTexture != null)

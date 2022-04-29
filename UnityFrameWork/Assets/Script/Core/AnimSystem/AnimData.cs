@@ -224,9 +224,14 @@ public class AnimData
         {
             bezierInit();
         }
+
+
+
     }
 
     #region UGUI
+
+
 
     #region UGUI_alpha
 
@@ -330,10 +335,10 @@ public class AnimData
 
 
     #endregion
-
     #endregion
 
     #region Transfrom
+
 
     public void TransfromInit()
     {

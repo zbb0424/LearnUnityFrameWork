@@ -1,13 +1,13 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Text;
-using UnityEngine;
 
-public class LanguageManager
+public class LanguageManager  
 {
     const string s_DataFilePrefix = "langData_";
-    public static SystemLanguage s_currentLanguage = SystemLanguage.ChineseSimplified;
+    static public SystemLanguage s_currentLanguage = SystemLanguage.ChineseSimplified;
     static DataTable s_languageData;
-    public void Init()
+	public void Init()
     {
         SetLanguage(Application.systemLanguage);
     }
@@ -43,7 +43,7 @@ public class LanguageManager
         if (l_contents == null || l_contents.Length == 0)
             return l_content;
         else
-        {
+        { 
             for (int i = 0; i < l_contents.Length; i++)
             {
                 StringBuilder builder = new StringBuilder();
