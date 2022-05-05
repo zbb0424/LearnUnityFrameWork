@@ -15,15 +15,15 @@ public static class BundleConfigManager
 
     public static void Initialize()
     {
-        Dictionary<string, SingleField> data = ConfigManager.GetData(configFileName);
+        Dictionary<string, object> data = ConfigManager.GetData(configFileName);
 
         if (data == null)
         {
             throw new Exception("BundleConfigManager Initialize Exception: " + configFileName + "file is not exits");
         }
 
-        relyBundleConfigs = JsonTool.Json2Dictionary<BundleConfig>(data[key_relyBundle].GetString());
-        bundleConfigs     = JsonTool.Json2Dictionary<BundleConfig>(data[key_bundles].GetString());
+        relyBundleConfigs = JsonTool.Json2Dictionary<BundleConfig>(data[key_relyBundle].ToString());
+        bundleConfigs     = JsonTool.Json2Dictionary<BundleConfig>(data[key_bundles   ].ToString());
     }
 
     public static BundleConfig GetBundleConfig(string bundleName)

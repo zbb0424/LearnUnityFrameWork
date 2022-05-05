@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 14:01:48	Unable to open archive file: C:/Users/Administrator.DESKTOP-PHVV78F/AppData/LocalLow/DefaultCompany/MyUnityFreameWork/UI/UIManager.assetBundle
+
+UnityEngine.AssetBundle:LoadFromFile(String)
+AssetsBundleManager:LoadBundle(String) (at Assets/Script/Core/ResourceLoad/AssetsBundleManager.cs:31)
+AssetsBundleManager:Load(String) (at Assets/Script/Core/ResourceLoad/AssetsBundleManager.cs:160)
+ResourceManager:Load(String) (at Assets/Script/Core/ResourceLoad/ResourceManager.cs:105)
+GameObjectManager:CreatGameObject(String, GameObject) (at Assets/Script/Core/GameObject/GameObjectManager.cs:35)
+UIManager:Init() (at Assets/Script/Core/UI/Control/UIManager.cs:34)
+UIManager:get_s_Instance() (at Assets/Script/Core/UI/Control/UIManager.cs:26)
+UIManager:CreateUIWindow(String) (at Assets/Script/Core/UI/Control/UIManager.cs:59)
+UIManager:OpenUIWindow(String, UICallBack, Object[]) (at Assets/Script/Core/UI/Control/UIManager.cs:85)
+RuntimeTest:Update() (at Assets/Script/Test/RuntimeTest.cs:32)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 14:01:48	AddBundle: UIManager dont exist!
+
+UnityEngine.Debug:LogError(Object)
+AssetsBundleManager:AddBundle(String, AssetBundle) (at Assets/Script/Core/ResourceLoad/AssetsBundleManager.cs:305)
+AssetsBundleManager:LoadBundle(String) (at Assets/Script/Core/ResourceLoad/AssetsBundleManager.cs:31)
+AssetsBundleManager:Load(String) (at Assets/Script/Core/ResourceLoad/AssetsBundleManager.cs:160)
+ResourceManager:Load(String) (at Assets/Script/Core/ResourceLoad/ResourceManager.cs:105)
+GameObjectManager:CreatGameObject(String, GameObject) (at Assets/Script/Core/GameObject/GameObjectManager.cs:35)
+UIManager:Init() (at Assets/Script/Core/UI/Control/UIManager.cs:34)
+UIManager:get_s_Instance() (at Assets/Script/Core/UI/Control/UIManager.cs:26)
+UIManager:CreateUIWindow(String) (at Assets/Script/Core/UI/Control/UIManager.cs:59)
+UIManager:OpenUIWindow(String, UICallBack, Object[]) (at Assets/Script/Core/UI/Control/UIManager.cs:85)
+RuntimeTest:Update() (at Assets/Script/Test/RuntimeTest.cs:32)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 14:01:48	Exception: CreatGameObject error dont find :UIManager
+
+GameObjectManager.CreatGameObject (System.String l_gameObjectName, UnityEngine.GameObject l_parent) (at Assets/Script/Core/GameObject/GameObjectManager.cs:39)
+UIManager.Init () (at Assets/Script/Core/UI/Control/UIManager.cs:34)
+UIManager.get_s_Instance () (at Assets/Script/Core/UI/Control/UIManager.cs:26)
+UIManager.CreateUIWindow (System.String l_UIname) (at Assets/Script/Core/UI/Control/UIManager.cs:59)
+UIManager.OpenUIWindow (System.String l_UIname, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:85)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:32)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 14:01:48	Exception: CreatGameObject error dont find :UIManager
+
+GameObjectManager.CreatGameObject (System.String l_gameObjectName, UnityEngine.GameObject l_parent) (at Assets/Script/Core/GameObject/GameObjectManager.cs:39)
+UIManager.Init () (at Assets/Script/Core/UI/Control/UIManager.cs:34)
+UIManager.get_s_Instance () (at Assets/Script/Core/UI/Control/UIManager.cs:26)
+UIManager.CreateUIWindow (System.String l_UIname) (at Assets/Script/Core/UI/Control/UIManager.cs:59)
+UIManager.OpenUIWindow (System.String l_UIname, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:85)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:32)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 14:01:48	Exception: CreatGameObject error dont find :UIManager
+
+GameObjectManager.CreatGameObject (System.String l_gameObjectName, UnityEngine.GameObject l_parent) (at Assets/Script/Core/GameObject/GameObjectManager.cs:39)
+UIManager.Init () (at Assets/Script/Core/UI/Control/UIManager.cs:34)
+UIManager.get_s_Instance () (at Assets/Script/Core/UI/Control/UIManager.cs:26)
+UIManager.CreateUIWindow (System.String l_UIname) (at Assets/Script/Core/UI/Control/UIManager.cs:59)
+UIManager.OpenUIWindow (System.String l_UIname, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:85)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:32)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 14:01:48	Exception: CreatGameObject error dont find :UIManager
+
+GameObjectManager.CreatGameObject (System.String l_gameObjectName, UnityEngine.GameObject l_parent) (at Assets/Script/Core/GameObject/GameObjectManager.cs:39)
+UIManager.Init () (at Assets/Script/Core/UI/Control/UIManager.cs:34)
+UIManager.get_s_Instance () (at Assets/Script/Core/UI/Control/UIManager.cs:26)
+UIManager.CreateUIWindow (System.String l_UIname) (at Assets/Script/Core/UI/Control/UIManager.cs:59)
+UIManager.OpenUIWindow (System.String l_UIname, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:85)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:32)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 14:01:48	Exception: CreatGameObject error dont find :UIManager
+
+GameObjectManager.CreatGameObject (System.String l_gameObjectName, UnityEngine.GameObject l_parent) (at Assets/Script/Core/GameObject/GameObjectManager.cs:39)
+UIManager.Init () (at Assets/Script/Core/UI/Control/UIManager.cs:34)
+UIManager.get_s_Instance () (at Assets/Script/Core/UI/Control/UIManager.cs:26)
+UIManager.CreateUIWindow (System.String l_UIname) (at Assets/Script/Core/UI/Control/UIManager.cs:59)
+UIManager.OpenUIWindow (System.String l_UIname, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:85)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:32)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 14:01:48	Exception: CreatGameObject error dont find :UIManager
+
+GameObjectManager.CreatGameObject (System.String l_gameObjectName, UnityEngine.GameObject l_parent) (at Assets/Script/Core/GameObject/GameObjectManager.cs:39)
+UIManager.Init () (at Assets/Script/Core/UI/Control/UIManager.cs:34)
+UIManager.get_s_Instance () (at Assets/Script/Core/UI/Control/UIManager.cs:26)
+UIManager.CreateUIWindow (System.String l_UIname) (at Assets/Script/Core/UI/Control/UIManager.cs:59)
+UIManager.OpenUIWindow (System.String l_UIname, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:85)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:32)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 14:01:48	Exception: CreatGameObject error dont find :UIManager
+
+GameObjectManager.CreatGameObject (System.String l_gameObjectName, UnityEngine.GameObject l_parent) (at Assets/Script/Core/GameObject/GameObjectManager.cs:39)
+UIManager.Init () (at Assets/Script/Core/UI/Control/UIManager.cs:34)
+UIManager.get_s_Instance () (at Assets/Script/Core/UI/Control/UIManager.cs:26)
+UIManager.CreateUIWindow (System.String l_UIname) (at Assets/Script/Core/UI/Control/UIManager.cs:59)
+UIManager.OpenUIWindow (System.String l_UIname, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:85)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:32)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 14:01:48	Exception: CreatGameObject error dont find :UIManager
+
+GameObjectManager.CreatGameObject (System.String l_gameObjectName, UnityEngine.GameObject l_parent) (at Assets/Script/Core/GameObject/GameObjectManager.cs:39)
+UIManager.Init () (at Assets/Script/Core/UI/Control/UIManager.cs:34)
+UIManager.get_s_Instance () (at Assets/Script/Core/UI/Control/UIManager.cs:26)
+UIManager.CreateUIWindow (System.String l_UIname) (at Assets/Script/Core/UI/Control/UIManager.cs:59)
+UIManager.OpenUIWindow (System.String l_UIname, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:85)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:32)
+
+---------------------------------------------------------------------------------------------------------------------

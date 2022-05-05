@@ -12,7 +12,10 @@ public class NetworkManager
     public static void Init()
     {
 
+      
+
         s_network = new TCPService();
+
         s_network.m_netWorkCallBack = ReceviceMeaasge;
     }
 

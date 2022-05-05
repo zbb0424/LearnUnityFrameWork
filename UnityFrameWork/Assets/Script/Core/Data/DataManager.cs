@@ -10,20 +10,12 @@ using System.Text;
  * */
 public class DataManager 
 {
-    public const string c_directoryName = "Data";
-    public const string c_expandName = "txt";
+    public const string directoryName = "Data";
     public static DataTable GetData(string ConfigName)
     {
         string dataJson = "";
 
-        #if UNITY_EDITOR
-            dataJson = ResourceIOTool.ReadStringByResource(
-                    PathTool.GetRelativelyPath(c_directoryName,
-                                                ConfigName,
-                                                c_expandName));
-        #else
-            dataJson = ResourceManager.ReadTextFile(ConfigName);
-        #endif
+        dataJson = ResourceManager.ReadTextFile(ConfigName);
 
         if (dataJson == "")
         {
@@ -40,14 +32,7 @@ public class DataManager
 
     public static void SaveData(string ConfigName, DataTable data)
     {
-        ResourceIOTool.WriteStringByFile(
-            PathTool.GetAbsolutePath(
-                ResLoadType.Resource,
-                PathTool.GetRelativelyPath(
-                    c_directoryName,
-                    ConfigName,
-                    c_expandName)), 
-            DataTable.Serialize(data));
+        ResourceIOTool.WriteStringByFile(GetEditorPath(ConfigName, false), DataTable.Serialize(data));
     }
 
     /// <summary>
@@ -58,7 +43,7 @@ public class DataManager
     {
         UnityEditor.AssetDatabase.Refresh();
 
-        string dataJson = ResourceIOTool.ReadStringByFile(PathTool.GetEditorPath(c_directoryName, dataName, c_expandName));
+        string dataJson = ResourceIOTool.ReadStringByFile(GetEditorPath(dataName, true));
 
         if (dataJson == "")
         {
@@ -80,9 +65,33 @@ public class DataManager
     {
         string configDataJson = Json.Serialize(data);
 
-        ResourceIOTool.WriteStringByFile(PathTool.GetEditorPath(c_directoryName, ConfigName, c_expandName), configDataJson);
+        ResourceIOTool.WriteStringByFile(GetEditorPath(ConfigName,true), configDataJson);
 
         UnityEditor.AssetDatabase.Refresh();
+    }
+
+    public static string GetEditorPath(string ConfigName,bool isEditor)
+    {
+        StringBuilder builder = new StringBuilder();
+
+        if (isEditor)
+        {
+            builder.Append(Application.dataPath);
+            builder.Append("/Editor");
+            builder.Append(directoryName);
+            builder.Append("/");
+        }
+        else
+        {
+            builder.Append(Application.dataPath);
+            builder.Append("/Resources/");
+            builder.Append(directoryName);
+            builder.Append("/");
+        }
+        builder.Append(ConfigName);
+        builder.Append(".csv");
+
+        return builder.ToString();
     }
     #endif
 }

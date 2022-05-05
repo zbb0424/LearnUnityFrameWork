@@ -13,7 +13,7 @@ public class AnimData
     public AnimType m_animType;
     public InteType m_interpolationType = InteType.Default ;
     public PathType m_pathType = PathType.Line;
-    public RepeatType m_repeatType = RepeatType.Once;
+    public RepeatType m_playType = RepeatType.Once;
 
     //进度控制变量
     public bool m_isDone = false;
@@ -35,21 +35,17 @@ public class AnimData
     //Color
     public Color m_fromColor;
     public Color m_toColor;
-    List<Color> m_oldColor = new List<Color>();
 
     //动画回调
     public object[] m_parameter;
     public AnimCallBack m_callBack;
     
-    //闪烁
-    public float m_space = 0;
-
     //其他设置
     public bool m_isChild = false;
     public bool m_isLocal = false;
 
     //控制点
-    public Vector3[] m_v3Contral  = null; //二阶取第一个用，三阶取前两个
+    public Vector3[] m_v3Contral = null; //二阶取第一个用，三阶取前两个
     public float[] m_floatContral = null;
 
     //自定义函数
@@ -77,7 +73,6 @@ public class AnimData
 
         switch (m_animType)
         {
-            case AnimType.UGUI_Color: UguiColor(); break;
             case AnimType.UGUI_Alpha: UguiAlpha(); break;
             case AnimType.UGUI_AnchoredPosition: UguiPosition(); break;
             case AnimType.UGUI_SizeDetal: SizeDelta(); break;
@@ -86,17 +81,11 @@ public class AnimData
             case AnimType.Position: Position(); break;
             case AnimType.LocalPosition: LocalPosition(); break;
             case AnimType.LocalScale: LocalScale(); break;
-            case AnimType.LocalRotate: LocalRotate(); break;
-            case AnimType.Rotate: Rotate(); break;
 
-            case AnimType.Color: UpdateColor(); break;
-            case AnimType.Alpha: UpdateAlpha(); break;
 
             case AnimType.Custom_Vector3: CustomMethodVector3(); break;
             case AnimType.Custom_Vector2: CustomMethodVector2(); break;
             case AnimType.Custom_Float:   CustomMethodFloat(); break;
-
-            case AnimType.Blink: Blink(); break;
         }
     }
 
@@ -119,7 +108,7 @@ public class AnimData
     //动画循环逻辑
     public bool AnimReplayLogic()
     {
-        switch (m_repeatType)
+        switch (m_playType)
         {
             case RepeatType.Once:
                 return false;
@@ -176,19 +165,12 @@ public class AnimData
     {
         switch (m_animType)
         {
-            case AnimType.UGUI_Color: UguiColorInit(m_isChild); break;
             case AnimType.UGUI_Alpha: UguiAlphaInit(m_isChild); break;
             case AnimType.UGUI_AnchoredPosition: UguiPositionInit(); break;
             case AnimType.UGUI_SizeDetal: UguiPositionInit(); break;
-
-            case AnimType.Color: ColorInit(m_isChild); break;
-            case AnimType.Alpha: AlphaInit(m_isChild); break;
-
             case AnimType.Position: TransfromInit(); break;
             case AnimType.LocalPosition: TransfromInit(); break;
             case AnimType.LocalScale: TransfromInit(); break;
-            case AnimType.LocalRotate: TransfromInit(); break;
-            case AnimType.Rotate: TransfromInit(); break;
         }
 
         if (m_pathType != PathType.Line)
@@ -278,7 +260,13 @@ public class AnimData
     /// </summary>
     Vector3 GetBezierInterpolationV3(Vector3 oldValue, Vector3 aimValue)
     {
-        float n_finishingRate = m_currentTime / m_totalTime;
+        Vector3 result = new Vector3(
+            GetInterpolation(oldValue.x, aimValue.x),
+            0,
+            0
+        );
+        float n_finishingRate = (result.x - oldValue.x) / (aimValue.x - oldValue.x);
+        n_finishingRate = Mathf.Clamp(n_finishingRate, -1, 2);
 
         switch (m_pathType)
         {
@@ -303,24 +291,19 @@ public class AnimData
     /// </summary>
     Vector3 Bezier3(Vector3 startPos, Vector3 endPos, float n_time, Vector3[] t_ControlPoint)
     {
-        return (1 - n_time) * (1 - n_time) * (1 - n_time) * startPos 
-            + 3 * (1 - n_time) * (1 - n_time) * n_time * t_ControlPoint[0] 
-            + 3 * (1 - n_time) * n_time * n_time * t_ControlPoint[1] 
-            + n_time * n_time * n_time * endPos;
+        return (1 - n_time) * (1 - n_time) * (1 - n_time) * startPos + 3 * (1 - n_time) * (1 - n_time) * n_time * t_ControlPoint[0] + 3 * (1 - n_time) * n_time * n_time * t_ControlPoint[1] + n_time * n_time * n_time * endPos;
     }
 
     #endregion
 
     #region UGUI
 
-    #region UGUI_Color
+    #region UGUI_alpha
 
     List<Image> m_animObjectList_Image = new List<Image>();
-    List<Text>  m_animObjectList_Text = new List<Text>();
+    List<Text> m_animObjectList_Text = new List<Text>();
 
-    #region ALpha
-
-    
+    List<Color> m_oldColor = new List<Color>();
 
     public void UguiAlphaInit(bool isChild)
     {
@@ -353,29 +336,19 @@ public class AnimData
         }
         else
         {
-            Image image = m_animGameObejct.GetComponent<Image>();
-            Text text = m_animGameObejct.GetComponent<Text>();
-            if (image != null)
-            {
-                m_animObjectList_Image.Add(image);
-                m_oldColor.Add(image.color);
-            }
-            if (text != null)
-            {
-                m_animObjectList_Text.Add(text);
-                m_oldColor.Add(text.color);
-            }
+            m_animObjectList_Image.Add(m_animGameObejct.GetComponent<Image>());
+            m_oldColor.Add(m_animGameObejct.GetComponent<Image>().color);
         }
 
-        SetUGUIAlpha(m_fromFloat);
+        setUGUIAlpha(m_fromFloat);
     }
 
     void UguiAlpha()
     {
-        SetUGUIAlpha(GetInterpolation(m_fromFloat, m_toFloat));
+        setUGUIAlpha(GetInterpolation(m_fromFloat, m_toFloat));
     }
 
-    public void SetUGUIAlpha(float a)
+    public void setUGUIAlpha(float a)
     {
         Color newColor = new Color();
 
@@ -399,75 +372,8 @@ public class AnimData
         }
     }
 
-    #endregion
-
-    #region Color
-
-    void UguiColor()
-    {
-        SetUGUIColor(GetInterpolationColor(m_fromColor, m_toColor));
-    }
-
-    public void UguiColorInit(bool isChild)
-    {
-        m_animObjectList_Image = new List<Image>();
-
-        if (isChild)
-        {
-            Image[] images = m_animGameObejct.GetComponentsInChildren<Image>();
-            for (int i = 0; i < images.Length; i++)
-            {
-                if (images[i].transform.GetComponent<Mask>() == null)
-                {
-                    m_animObjectList_Image.Add(images[i]);
-                }
-                else
-                {
-                    //Debug.LogError("name:" + images[i].gameObject.name);
-                }
-            }
-            Text[] texts = m_animGameObejct.GetComponentsInChildren<Text>();
-
-            for (int i = 0; i < texts.Length; i++)
-            {
-                m_animObjectList_Text.Add(texts[i]);
-            }
-        }
-        else
-        {
-            Image image = m_animGameObejct.GetComponent<Image>();
-            Text text = m_animGameObejct.GetComponent<Text>();
-            if (image != null)
-            {
-                m_animObjectList_Image.Add(image);
-            }
-            if(text != null)
-            {
-                m_animObjectList_Text.Add(text);
-            }
-        }
-        SetUGUIAlpha(m_fromFloat);
-    }
-
-    void SetUGUIColor(Color color)
-    {
-        for (int i = 0; i < m_animObjectList_Image.Count; i++)
-        {
-            m_animObjectList_Image[i].color = color;
-        }
-
-        for (int i = 0; i < m_animObjectList_Text.Count; i++)
-        {
-            m_animObjectList_Text[i].color = color;
-        }
-    }
 
 
-    #endregion
-
-    #endregion
-
-    #region UGUI_SizeDelta
     void SizeDelta()
     {
         if (m_rectRransform == null)
@@ -480,7 +386,7 @@ public class AnimData
 
     #endregion
 
-    #region UGUI_Position
+    #region UGUI_position
 
     public void UguiPositionInit()
     {
@@ -493,7 +399,6 @@ public class AnimData
     }
 
     #endregion
-
     #endregion
 
     #region Transfrom
@@ -513,16 +418,6 @@ public class AnimData
         m_transform.localPosition = GetInterpolationV3(m_fromV3, m_toV3);
     }
 
-    void LocalRotate()
-    {
-        m_transform.localEulerAngles = GetInterpolationV3(m_fromV3, m_toV3);
-    }
-
-    void Rotate()
-    {
-        m_transform.eulerAngles = GetInterpolationV3(m_fromV3, m_toV3);
-    }
-
     void LocalScale()
     {
         m_transform.localScale = GetInterpolationV3(m_fromV3, m_toV3);
@@ -531,115 +426,6 @@ public class AnimData
     #endregion
 
     #region Color
-
-    List<SpriteRenderer> m_animObjectList_Sprite = new List<SpriteRenderer>();
-
-    #region ALPHA
-
-    public void AlphaInit(bool isChild)
-    {
-        if (isChild)
-        {
-            SpriteRenderer[] images = m_animGameObejct.GetComponentsInChildren<SpriteRenderer>();
-            for (int i = 0; i < images.Length; i++)
-            {
-                m_animObjectList_Sprite.Add(images[i]);
-                m_oldColor.Add(images[i].color);
-            }
-        }
-        else
-        {
-            SpriteRenderer image = m_animGameObejct.GetComponent<SpriteRenderer>();
-            if (image != null)
-            {
-                m_animObjectList_Sprite.Add(image);
-                m_oldColor.Add(image.color);
-            }
-        }
-
-        SetAlpha(m_fromFloat);
-    }
-
-    void UpdateAlpha()
-    {
-        SetAlpha(GetInterpolation(m_fromFloat, m_toFloat));
-    }
-
-    public void SetAlpha(float a)
-    {
-        Color newColor = new Color();
-
-        int index = 0;
-        for (int i = 0; i < m_animObjectList_Sprite.Count; i++)
-        {
-            newColor = m_oldColor[index];
-            newColor.a = a;
-            m_animObjectList_Sprite[i].color = newColor;
-
-            index++;
-        }
-    }
-
-    #endregion
-
-    #region Color
-
-    public void ColorInit(bool isChild)
-    {
-        if (isChild)
-        {
-            SpriteRenderer[] images = m_animGameObejct.GetComponentsInChildren<SpriteRenderer>();
-
-            for (int i = 0; i < images.Length; i++)
-            {
-                m_animObjectList_Sprite.Add(images[i]);
-            }
-        }
-        else
-        {
-            SpriteRenderer image = m_animGameObejct.GetComponent<SpriteRenderer>();
-            if (image != null)
-            {
-                m_animObjectList_Sprite.Add(image);
-            }
-        }
-
-        SetColor(m_fromColor);
-    }
-
-    void UpdateColor()
-    {
-        SetColor(GetInterpolationColor(m_fromColor, m_toColor));
-    }
-
-    public void SetColor(Color color)
-    {
-        for (int i = 0; i < m_animObjectList_Sprite.Count; i++)
-        {
-            m_animObjectList_Sprite[i].color = color;
-        }
-    }
-
-    #endregion
-
-    #endregion
-
-    #region 闪烁
-    float n_timer = 0;
-
-    void Blink()
-    {
-        if (n_timer < 0)
-        {
-            n_timer = m_space;
-            m_animGameObejct.SetActive(!m_animGameObejct.activeSelf);
-        }
-        else
-        {
-            n_timer -= Time.deltaTime;
-        }
- 
-    }
 
     #endregion
 
@@ -701,15 +487,6 @@ public class AnimData
             result = GetBezierInterpolationV3(oldValue, aimValue);
         }
 
-        return result;
-    }
-
-    Color GetInterpolationColor(Color oldValue, Color aimValue)
-    {
-        Color result = new Color( GetInterpolation(oldValue.r,aimValue.r), 
-                                  GetInterpolation(oldValue.g,aimValue.g), 
-                                  GetInterpolation(oldValue.b,aimValue.b), 
-                                  GetInterpolation(oldValue.a,aimValue.a));
         return result;
     }
 
@@ -1040,6 +817,4 @@ public class AnimData
     //outInBack,
 
     #endregion
-
-   
 }

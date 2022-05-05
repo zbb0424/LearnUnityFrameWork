@@ -1,0 +1,100 @@
+2022/5/5 13:56:42	!ContainsKey MianMenu
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:267)
+UIManager.CloseUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:117)
+UIManager.CloseUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:155)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:37)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	!ContainsKey MianMenu
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:267)
+UIManager.CloseUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:117)
+UIManager.CloseUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:155)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:37)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	!ContainsKey MianMenu
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:267)
+UIManager.CloseUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:117)
+UIManager.CloseUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:155)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:37)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	!ContainsKey MianMenu
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:267)
+UIManager.CloseUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:117)
+UIManager.CloseUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:155)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:37)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	!ContainsKey MianMenu
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:267)
+UIManager.CloseUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:117)
+UIManager.CloseUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:155)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:37)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	!ContainsKey MianMenu
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:267)
+UIManager.CloseUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:117)
+UIManager.CloseUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:155)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:37)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	!ContainsKey MianMenu
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:267)
+UIManager.CloseUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:117)
+UIManager.CloseUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:155)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:37)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	!ContainsKey MianMenu
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:267)
+UIManager.CloseUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:117)
+UIManager.CloseUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:155)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:37)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	!ContainsKey MianMenu
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:267)
+UIManager.CloseUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:117)
+UIManager.CloseUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:155)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:37)
+
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	!ContainsKey MianMenu
+---------------------------------------------------------------------------------------------------------------------
+2022/5/5 13:56:42	Exception: UIManager: RemoveUI error l_UI is null: !
+
+UIManager.RemoveUI (UIWindowBase l_UI) (at Assets/Script/Core/UI/Control/UIManager.cs:267)
+UIManager.CloseUIWindow (UIWindowBase l_UI, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:117)
+UIManager.CloseUIWindow (System.String l_UIname, System.Boolean isPlayAnim, UICallBack l_callback, System.Object[] l_objs) (at Assets/Script/Core/UI/Control/UIManager.cs:155)
+RuntimeTest.Update () (at Assets/Script/Test/RuntimeTest.cs:37)
+
+---------------------------------------------------------------------------------------------------------------------

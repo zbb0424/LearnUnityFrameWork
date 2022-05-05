@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Text;
-using System;
 /*
  * gameLoadType 为 Resource 时 ，所有资源从Resource读取
  * gameLoadType 不为 Resource时，资源读取方式从配置中读取
@@ -56,18 +55,28 @@ public static class ResourceManager
 
     public static ResLoadType GetLoadType(ResLoadType loadType)
     {
+        if (gameLoadType == ResLoadType.Resource)
+        {
+            return ResLoadType.Resource;
+        }
+
+        if (loadType == ResLoadType.Default)
+        {
+            return gameLoadType;
+        }
 
         return loadType;
     }
 
     //读取一个文本
-    public static string ReadTextFile(string textName)
+    public static string ReadTextFile(string path)
     {
-        TextAsset text = (TextAsset)Load(textName);
+        TextAsset text = (TextAsset)Load(path);
 
         if (text == null)
         {
-            throw new Exception("ReadTextFile not find " + textName);
+            Debug.LogError("ResourceManager: ReadTextFile Dont find " + path);
+            return "";
         }
         else
         {
@@ -76,13 +85,14 @@ public static class ResourceManager
     }
 
     //保存一个文本
-    public static void WriteTextFile(string path,string content ,ResLoadType type)
+    public static void WriteTextFile(string path,string content ,ResLoadType type = ResLoadType.Default)
     {
         #if UNITY_EDITOR
-            ResourceIOTool.WriteStringByFile(GetPath(path, type), content);
+            ResourceIOTool.WriteStringByFile(GetPath(path, ResLoadType.Resource), content);
         #else
             
         #endif
+
     }
 
     public static object Load(string name)
@@ -91,7 +101,7 @@ public static class ResourceManager
 
         if(packData == null)
         {
-            throw new Exception("Load Exception not find " + name);
+            return null;
         }
 
         ResLoadType loadTypeTmp = GetLoadType(packData.loadType);
@@ -136,6 +146,8 @@ public static class ResourceManager
 
 public enum ResLoadType
 {
+    Default,
+
     Resource,
     Streaming,
     Persistent,
